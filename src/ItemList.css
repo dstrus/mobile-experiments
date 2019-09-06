@@ -1,0 +1,7 @@
+.ItemList {
+  width: 100%;
+  margin-top: 1rem;
+  overflow-y: scroll;
+  height: calc(100vh - 48px - 14rem);
+  -webkit-overflow-scrolling: touch;
+}
