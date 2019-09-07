@@ -6,9 +6,19 @@
   align-items: center;
   justify-content: space-between;
   line-height: 16px;
+  transition: .2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  transform: rotateX(0deg);
 }
 
-.Item img {
+.Item.queued {
+  transform: rotateX(-90deg);
+}
+
+.Item.hidden {
+  display: none;
+}
+
+img.patron {
   width: 80px;
   border-radius: 50%;
 }
