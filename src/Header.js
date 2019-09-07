@@ -11,9 +11,9 @@ function Header (props) {
     <header className="Header">
       <PageSelector {...props} />
 
-      <a onClick={props.showMenu}>
+      <button className="sign-out" onClick={props.showMenu}>
         <FontAwesomeIcon icon={faSignOutAlt} />
-      </a>
+      </button>
     </header>
   )
 }
