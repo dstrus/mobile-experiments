@@ -62,7 +62,7 @@ class SearchResult extends Component {
   }
 
   render() {
-    const patron = this.props.data
+    const { patron } = this.props
     const queuedClass = this.state.queued ? 'queued' : ''
     const hiddenClass = this.state.hidden ? 'hidden' : ''
     const className = `SearchResult ${queuedClass} ${hiddenClass}`
