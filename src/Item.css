@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: space-between;
   line-height: 16px;
-  transition: .2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  transition: .5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
   transform: rotateX(0deg);
 }
 
@@ -14,13 +14,26 @@
   transform: rotateX(-90deg);
 }
 
-.Item.hidden {
+.hidden {
   display: none;
 }
 
 img.patron {
   width: 80px;
   border-radius: 50%;
+}
+
+img.clone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+img.clone.animated {
+  margin-top: -15px !important;
+  margin-left: 35px !important;
+  transform: scale(0.4);
 }
 
 .Item .phone {
