@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faBars } from '@fortawesome/free-solid-svg-icons'
 
 import Segment from './Segment'
 
@@ -25,7 +25,11 @@ function PageSelector(props) {
         active={!props.searchIsShowing}
         last
       >
-        Q
+        <FontAwesomeIcon
+          style={{ color: 'white' }}
+          icon={faBars}
+          size="1x"
+        />
       </Segment>
     </div>
   )
