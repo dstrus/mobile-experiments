@@ -1,2 +1,12 @@
-.PageSelector {
+.PageSelector .badge {
+  color: #e56000;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  font-size: 10px;
+  line-height: 15px;
 }

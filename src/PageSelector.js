@@ -30,6 +30,9 @@ function PageSelector(props) {
           icon={faBars}
           size="1x"
         />
+        <div className="badge">
+          {props.queueLength}
+        </div>
       </Segment>
     </div>
   )

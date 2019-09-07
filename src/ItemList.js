@@ -4,7 +4,7 @@ import Item from './Item'
 
 import './ItemList.css'
 
-function ItemList() {
+function ItemList(props) {
   const data = [
     { id: 1, phone: 'XXX-XX4-7609' },
     { id: 2, phone: 'XXX-XX4-7609' },
@@ -20,7 +20,15 @@ function ItemList() {
   return (
     <div className="ItemList">
       {
-        data.map(dino => <Item data={dino} key={dino.id} />)
+        data.map(
+          dino => (
+            <Item
+              data={dino}
+              key={dino.id}
+              incrementQueue={props.incrementQueue}
+            />
+          )
+        )
       }
     </div>
   )

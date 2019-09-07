@@ -55,6 +55,7 @@ class Item extends Component {
     window.setTimeout(
       () => {
         newImg.classList.add('hidden')
+        this.props.incrementQueue()
       },
       600
     )

@@ -46,7 +46,7 @@ function Search(props) {
         </div>
       </form>
 
-      <ItemList />
+      <ItemList incrementQueue={props.incrementQueue} />
     </div>
   )
 }

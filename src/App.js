@@ -11,6 +11,7 @@ class App extends Component {
     searchingByPhone: true,
     searchingByTag: false,
     menuIsShowing: false,
+    queueLength: 1,
   }
 
   showSearch = () => {
@@ -43,6 +44,12 @@ class App extends Component {
     this.setState({ menuIsShowing: false })
   }
 
+  incrementQueue = () => {
+    this.setState((state, props) => {
+      this.setState({ queueLength: state.queueLength + 1 })
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -56,6 +63,7 @@ class App extends Component {
           showSearch={this.showSearch}
           hideSearch={this.hideSearch}
           showMenu={this.showMenu}
+          queueLength={this.state.queueLength}
         />
 
         <div>
@@ -66,6 +74,7 @@ class App extends Component {
                 searchingByTag={this.state.searchingByTag}
                 searchByPhone={this.searchByPhone}
                 searchByTag={this.searchByTag}
+                incrementQueue={this.incrementQueue}
               />
             )
           }
