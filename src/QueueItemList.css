@@ -1,0 +1,10 @@
+.QueueItemList {
+  /* padding-bottom: 1rem; */
+  background-color: #f3f3f3;
+}
+
+.QueueItemList > p {
+  margin: 0 1rem;
+  padding-bottom: 1rem;
+  color: #666;
+}

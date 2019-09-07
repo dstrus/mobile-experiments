@@ -55,7 +55,7 @@ class SearchResult extends Component {
     window.setTimeout(
       () => {
         newImg.classList.add('hidden')
-        this.props.incrementQueue()
+        this.props.addToQueue(this.props.patron)
       },
       600
     )

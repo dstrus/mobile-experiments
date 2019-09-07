@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+
 import Header from './Header'
 import Search from './Search'
 import SideMenu from './SideMenu'
+import Queue from './Queue'
 
 import './App.css';
 
@@ -11,7 +13,8 @@ class App extends Component {
     searchingByPhone: true,
     searchingByTag: false,
     menuIsShowing: false,
-    queueLength: 1,
+    queue: [],
+    myQueue: [],
   }
 
   showSearch = () => {
@@ -44,9 +47,11 @@ class App extends Component {
     this.setState({ menuIsShowing: false })
   }
 
-  incrementQueue = () => {
+  addToQueue = (patron) => {
     this.setState((state, props) => {
-      this.setState({ queueLength: state.queueLength + 1 })
+      const { queue } = state
+      queue.push(patron)
+      this.setState({ queue })
     })
   }
 
@@ -63,7 +68,7 @@ class App extends Component {
           showSearch={this.showSearch}
           hideSearch={this.hideSearch}
           showMenu={this.showMenu}
-          queueLength={this.state.queueLength}
+          queue={this.state.queue}
         />
 
         <div>
@@ -74,14 +79,17 @@ class App extends Component {
                 searchingByTag={this.state.searchingByTag}
                 searchByPhone={this.searchByPhone}
                 searchByTag={this.searchByTag}
-                incrementQueue={this.incrementQueue}
+                addToQueue={this.addToQueue}
               />
             )
           }
 
           {
             !this.state.searchIsShowing && (
-              <div>Queue!</div>
+              <Queue
+                queue={this.state.queue}
+                myQueue={this.state.myQueue}
+              />
             )
           }
         </div>

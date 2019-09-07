@@ -46,7 +46,7 @@ function Search(props) {
         </div>
       </form>
 
-      <SearchResultList incrementQueue={props.incrementQueue} />
+      <SearchResultList addToQueue={props.addToQueue} />
     </div>
   )
 }

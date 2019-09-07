@@ -1,4 +1,5 @@
-.SearchResult {
+.QueueItem {
+  background-color: white;
   border-top: 1px solid #c9c9c9;
   border-bottom: 1px solid #c9c9c9;
   padding: 0.5rem 1rem;
@@ -11,7 +12,7 @@
   transform: rotateX(0deg);
 }
 
-.SearchResult.queued {
+.QueueItem.queued {
   transform: rotateX(-90deg);
 }
 
@@ -19,16 +20,21 @@
   display: none;
 }
 
+.imgContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
 img.patron {
   width: 80px;
   border-radius: 50%;
 }
 
-img.clone {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: all 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+img.patron.small {
+  width: 50px;
 }
 
 img.clone.animated {
@@ -37,31 +43,34 @@ img.clone.animated {
   transform: scale(0.4);
 }
 
-.SearchResult .phone {
-  font-weight: bold;
-  font-size: 14px;
+.QueueItem .phone {
+  font-size: 12px;
+  margin-top: 0.5rem;
 }
 
-.SearchResult small {
+.QueueItem small {
   font-size: 10px;
 }
 
-.SearchResult p {
+.QueueItem p {
   font-size: 10px;
   font-weight: 700;
+  margin-top: 0;
+  margin-left: 0.5rem;
+  margin-bottom: 0;
 }
 
-.SearchResult button {
+.QueueItem button {
   position: relative;
   background-color: transparent;
   border: 0;
 }
 
-.SearchResult .menu {
+.QueueItem .return {
   font-size: 26px;
 }
 
-.SearchResult .circle {
+.QueueItem .circle {
   background-color: white;
   border: 2px solid white;
   border-radius: 50%;
@@ -69,4 +78,29 @@ img.clone.animated {
   position: absolute;
   top: 0;
   right: 6px;
+}
+
+.details {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+.tags {
+  display: flex;
+  justify-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.tag {
+  color: white;
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 6px;
+}
+
+.tag .number {
+  font-weight: bold;
+  font-size: 20px;
 }

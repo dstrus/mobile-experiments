@@ -14,7 +14,7 @@ function SearchResultList(props) {
             <SearchResult
               patron={patron}
               key={patron.id}
-              incrementQueue={props.incrementQueue}
+              addToQueue={props.addToQueue}
             />
           )
         )
