@@ -1,10 +1,10 @@
 import React from 'react'
 
-import Item from './Item'
+import SearchResult from './SearchResult'
 
-import './ItemList.css'
+import './SearchResultList.css'
 
-function ItemList(props) {
+function SearchResultList(props) {
   const data = [
     { id: 1, phone: 'XXX-XX4-7609' },
     { id: 2, phone: 'XXX-XX4-7609' },
@@ -18,11 +18,11 @@ function ItemList(props) {
     { id: 10, phone: 'XXX-XX4-7609' },
   ]
   return (
-    <div className="ItemList">
+    <div className="SearchResultList">
       {
         data.map(
           dino => (
-            <Item
+            <SearchResult
               data={dino}
               key={dino.id}
               incrementQueue={props.incrementQueue}
@@ -34,4 +34,4 @@ function ItemList(props) {
   )
 }
 
-export default ItemList
+export default SearchResultList

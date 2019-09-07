@@ -1,4 +1,4 @@
-.Item {
+.SearchResult {
   border-top: 1px solid #c9c9c9;
   padding: 0.5rem 1rem;
   width: 100%;
@@ -10,7 +10,7 @@
   transform: rotateX(0deg);
 }
 
-.Item.queued {
+.SearchResult.queued {
   transform: rotateX(-90deg);
 }
 
@@ -36,31 +36,31 @@ img.clone.animated {
   transform: scale(0.4);
 }
 
-.Item .phone {
+.SearchResult .phone {
   font-weight: bold;
   font-size: 14px;
 }
 
-.Item small {
+.SearchResult small {
   font-size: 10px;
 }
 
-.Item p {
+.SearchResult p {
   font-size: 10px;
   font-weight: 700;
 }
 
-.Item button {
+.SearchResult button {
   position: relative;
   background-color: transparent;
   border: 0;
 }
 
-.Item .menu {
+.SearchResult .menu {
   font-size: 26px;
 }
 
-.Item .circle {
+.SearchResult .circle {
   background-color: white;
   border: 2px solid white;
   border-radius: 50%;

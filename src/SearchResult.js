@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 
-import './Item.css'
+import './SearchResult.css'
 
-class Item extends Component {
+class SearchResult extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -21,7 +21,7 @@ class Item extends Component {
     this.setState(
       { queued: true },
 
-      // Hide the Item after 0.6s
+      // Hide the SearchResult after 0.6s
       () => {
         window.setTimeout(
           () => this.setState({ hidden: true }),
@@ -65,7 +65,7 @@ class Item extends Component {
     const patron = this.props.data
     const queuedClass = this.state.queued ? 'queued' : ''
     const hiddenClass = this.state.hidden ? 'hidden' : ''
-    const className = `Item ${queuedClass} ${hiddenClass}`
+    const className = `SearchResult ${queuedClass} ${hiddenClass}`
 
     return (
       <div className={className}>
@@ -97,4 +97,4 @@ class Item extends Component {
   }
 }
 
-export default Item
+export default SearchResult
