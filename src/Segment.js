@@ -22,7 +22,7 @@ function Segment(props) {
   }
 
   return (
-    <button style={props.style} className={className} onClick={onClick}>
+    <button type="button" style={props.style} className={className} onClick={onClick}>
       {props.children}
     </button>
   )

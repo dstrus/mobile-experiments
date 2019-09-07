@@ -2,6 +2,6 @@
   width: 100%;
   margin-top: 1rem;
   overflow-y: scroll;
-  height: calc(100vh - 48px - 14rem);
+  height: calc(100vh - 48px - 11rem);
   -webkit-overflow-scrolling: touch;
 }

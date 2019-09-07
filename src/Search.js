@@ -1,4 +1,6 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPhoneAlt, faTag, faSearch } from '@fortawesome/free-solid-svg-icons'
 
 import Segment from './Segment'
 import ItemList from './ItemList'
@@ -7,38 +9,42 @@ import './Search.css'
 
 function Search(props) {
   const segmentStyle = {
-    width: '50%',
+    // width: '50%',
     fontSize: '12px',
-    height: '1.5rem'
+    height: '1.75rem'
   }
 
   return (
     <div className="Search">
       <form>
-        <input
-          autoFocus
-          type="tel"
-          placeholder="Search"
-        />
+        <div>
+          <Segment
+            first
+            style={segmentStyle}
+            active={props.searchingByPhone}
+            onClick={props.searchByPhone}
+          >
+            <FontAwesomeIcon icon={faPhoneAlt} />
+          </Segment>
+          <Segment
+            last
+            style={segmentStyle}
+            active={props.searchingByTag}
+            onClick={props.searchByTag}
+          >
+            <FontAwesomeIcon icon={faTag} />
+          </Segment>
+        </div>
+
+        <div className="input-container">
+          <FontAwesomeIcon icon={faSearch} className="search-icon" />
+          <input
+            autoFocus
+            type="tel"
+            placeholder="Search"
+          />
+        </div>
       </form>
-      <div style={{ width: '90%', margin: '0 auto' }}>
-        <Segment
-          first
-          style={segmentStyle}
-          active={props.searchingByPhone}
-          onClick={props.searchByPhone}
-        >
-          Phone
-        </Segment>
-        <Segment
-          last
-          style={segmentStyle}
-          active={props.searchingByTag}
-          onClick={props.searchByTag}
-        >
-          Tag
-        </Segment>
-      </div>
 
       <ItemList />
     </div>
