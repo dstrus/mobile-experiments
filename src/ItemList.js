@@ -6,26 +6,16 @@ import './ItemList.css'
 
 function ItemList() {
   const data = [
-    { id: 1, name: 'Tyrannosaurus' },
-    { id: 2, name: 'Velociraptor' },
-    { id: 3, name: 'Brontosaurus' },
-    { id: 4, name: 'Ankylosaurus' },
-    { id: 5, name: 'Tyrannosaurus' },
-    { id: 6, name: 'Velociraptor' },
-    { id: 7, name: 'Brontosaurus' },
-    { id: 8, name: 'Ankylosaurus' },
-    { id: 9, name: 'Tyrannosaurus' },
-    { id: 10, name: 'Velociraptor' },
-    { id: 11, name: 'Brontosaurus' },
-    { id: 12, name: 'Ankylosaurus' },
-    { id: 13, name: 'Tyrannosaurus' },
-    { id: 14, name: 'Velociraptor' },
-    { id: 15, name: 'Brontosaurus' },
-    { id: 16, name: 'Ankylosaurus' },
-    { id: 17, name: 'Tyrannosaurus' },
-    { id: 18, name: 'Velociraptor' },
-    { id: 19, name: 'Brontosaurus' },
-    { id: 20, name: 'Ankylosaurus' },
+    { id: 1, phone: 'XXX-XX4-7609' },
+    { id: 2, phone: 'XXX-XX4-7609' },
+    { id: 3, phone: 'XXX-XX4-7609' },
+    { id: 4, phone: 'XXX-XX4-7609' },
+    { id: 5, phone: 'XXX-XX4-7609' },
+    { id: 6, phone: 'XXX-XX4-7609' },
+    { id: 7, phone: 'XXX-XX4-7609' },
+    { id: 8, phone: 'XXX-XX4-7609' },
+    { id: 9, phone: 'XXX-XX4-7609' },
+    { id: 10, phone: 'XXX-XX4-7609' },
   ]
   return (
     <div className="ItemList">

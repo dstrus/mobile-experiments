@@ -1,5 +1,48 @@
 .Item {
   border-top: 1px solid #c9c9c9;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 16px;
+}
+
+.Item img {
+  width: 80px;
+  border-radius: 50%;
+}
+
+.Item .phone {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.Item small {
+  font-size: 10px;
+}
+
+.Item p {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.Item button {
+  position: relative;
+  background-color: transparent;
+  border: 0;
+}
+
+.Item .menu {
+  font-size: 26px;
+}
+
+.Item .circle {
+  background-color: white;
+  border: 2px solid white;
+  border-radius: 50%;
+  font-size: 18px;
+  position: absolute;
+  top: 0;
+  right: 6px;
 }
