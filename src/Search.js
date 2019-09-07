@@ -36,7 +36,7 @@ function Search(props) {
           </Segment>
         </div>
 
-        <div className="input-container">
+        <div className="inputContainer">
           <FontAwesomeIcon icon={faSearch} className="search-icon" />
           <input
             autoFocus

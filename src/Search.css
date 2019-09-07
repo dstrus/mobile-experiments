@@ -13,7 +13,7 @@
   justify-content: space-between;
 }
 
-.Search .input-container {
+.Search .inputContainer {
   flex: 1;
   position: relative;
   padding-right: 1rem;
