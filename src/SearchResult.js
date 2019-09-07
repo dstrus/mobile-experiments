@@ -81,7 +81,15 @@ class SearchResult extends Component {
         <div>
           <div className="phone">{patron.phone}</div>
           <small>Arrival: 10/13/19 @12:50pm</small><br />
-          <small>Tags: 56, 89, 100</small>
+          <small>
+            Tags:
+            {
+              patron.tags.map((tag, i) => {
+                const prefix = i === 0 ? '' : ','
+                return (<span>{prefix} {tag.number}</span>)
+              })
+            }
+          </small>
           <p>KIOSK A</p>
         </div>
 
