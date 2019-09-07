@@ -1,6 +1,9 @@
 .QueueItemList {
-  /* padding-bottom: 1rem; */
   background-color: #f3f3f3;
+  width: 100%;
+  overflow-y: scroll;
+  height: calc(100vh - 48px - 4rem);
+  -webkit-overflow-scrolling: touch;
 }
 
 .QueueItemList > p {
