@@ -8,10 +8,15 @@
   padding: 0 1rem;
 }
 
-.Header button.signOut {
+.Header button.signOut,
+.Header button.reload {
   background-color: transparent;
   border: 0;
   color: white;
   font-size: 20px;
   padding: 0;
+}
+
+.Header button.reload {
+  margin-right: 1rem;
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
+import { faSignOutAlt, faRedoAlt } from '@fortawesome/free-solid-svg-icons'
 
 import PageSelector from './PageSelector'
 
@@ -11,9 +11,14 @@ function Header (props) {
     <header className="Header">
       <PageSelector {...props} />
 
-      <button className="signOut" onClick={props.showMenu}>
-        <FontAwesomeIcon icon={faSignOutAlt} />
-      </button>
+      <div>
+        <button className="reload" onClick={() => window.location.reload()}>
+          <FontAwesomeIcon icon={faRedoAlt} />
+        </button>
+        <button className="signOut" onClick={props.showMenu}>
+          <FontAwesomeIcon icon={faSignOutAlt} />
+        </button>
+      </div>
     </header>
   )
 }
