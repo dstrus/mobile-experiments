@@ -86,7 +86,7 @@ class SearchResult extends Component {
             {
               patron.tags.map((tag, i) => {
                 const prefix = i === 0 ? '' : ','
-                return (<span>{prefix} {tag.number}</span>)
+                return (<span key={i}>{prefix} {tag.number}</span>)
               })
             }
           </small>

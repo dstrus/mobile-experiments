@@ -23,7 +23,7 @@ function QueueItem(props) {
           {
             patron.tags.map((tag, i) => {
               return (
-                <div className="tag" style={{ backgroundColor: tag.color }}>
+                <div className="tag" style={{ backgroundColor: tag.color }} key={i}>
                   <div className="type">{tag.type}</div>
                   <div className="number">{tag.number}</div>
                 </div>

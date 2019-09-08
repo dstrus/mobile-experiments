@@ -9,7 +9,7 @@ function QueueItemList(props) {
       {
         props.patrons.length > 0 && (
           props.patrons.map(patron => (
-            <QueueItem patron={patron} />
+            <QueueItem patron={patron} key={patron.id} />
           ))
         )
       }
