@@ -81,7 +81,7 @@ class SearchResult extends Component {
         <button onClick={this.onClick} disabled={patron.isQueued || this.state.loading}>
           {
             this.state.loading && (
-              <FontAwesomeIcon icon={faSpinner} class="rotating" />
+              <FontAwesomeIcon icon={faSpinner} className="rotating" />
             )
           }
 
