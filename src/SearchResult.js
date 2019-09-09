@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faPlusCircle, faCheck } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faPlusCircle, faCheck, faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 import './SearchResult.css'
 
@@ -8,9 +8,13 @@ class SearchResult extends Component {
   constructor(props) {
     super(props)
     this.imgRef = React.createRef()
+    this.state = {
+      loading: false
+    }
   }
 
   onClick = () => {
+    this.setState({ loading: true })
     this.cloneImage()
   }
 
@@ -39,6 +43,7 @@ class SearchResult extends Component {
       () => {
         newImg.classList.add('hidden')
         this.props.addToQueue(this.props.patron)
+        this.setState({ loading: false })
       },
       600
     )
@@ -73,15 +78,21 @@ class SearchResult extends Component {
           <p>KIOSK A</p>
         </div>
 
-        <button onClick={this.onClick} disabled={patron.isQueued}>
+        <button onClick={this.onClick} disabled={patron.isQueued || this.state.loading}>
           {
-            patron.isQueued && (
+            this.state.loading && (
+              <FontAwesomeIcon icon={faSpinner} class="rotating" />
+            )
+          }
+
+          {
+            !this.state.loading && patron.isQueued && (
               <FontAwesomeIcon icon={faCheck} />
             )
           }
 
           {
-            !patron.isQueued && (
+            !this.state.loading && !patron.isQueued && (
               <>
                 <div>
                   <FontAwesomeIcon icon={faBars} className="menu" />
