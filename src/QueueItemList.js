@@ -1,6 +1,6 @@
 import React from 'react'
 
-import QueueItem from './QueueItem'
+import QueueItem from './containers/QueueItemContainer'
 import './QueueItemList.css'
 
 function QueueItemList(props) {

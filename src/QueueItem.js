@@ -34,7 +34,7 @@ function QueueItem(props) {
 
       </div>
 
-      <button>
+      <button onClick={() => props.returnAllItems(patron)}>
         <div>
           <FontAwesomeIcon icon={faShare} className="return" />
         </div>
