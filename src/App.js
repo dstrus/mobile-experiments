@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import Header from './Header'
 import Search from './Search'
-import SideMenu from './SideMenu'
 import Queue from './containers/QueueContainer'
 
 import './App.css';
@@ -12,7 +11,6 @@ class App extends Component {
     searchIsShowing: true,
     searchingByPhone: true,
     searchingByTag: false,
-    menuIsShowing: false,
   }
 
   showSearch = () => {
@@ -37,27 +35,13 @@ class App extends Component {
     })
   }
 
-  showMenu = () => {
-    this.setState({ menuIsShowing: true })
-  }
-
-  hideMenu = () => {
-    this.setState({ menuIsShowing: false })
-  }
-
   render() {
     return (
       <div className="App">
-        <SideMenu
-          show={this.state.menuIsShowing}
-          hideMenu={this.hideMenu}
-        />
-
         <Header
           searchIsShowing={this.state.searchIsShowing}
           showSearch={this.showSearch}
           hideSearch={this.hideSearch}
-          showMenu={this.showMenu}
         />
 
         <div>
