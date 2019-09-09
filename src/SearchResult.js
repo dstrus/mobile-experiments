@@ -14,21 +14,9 @@ class SearchResult extends Component {
     this.imgRef = React.createRef()
   }
 
-
   onClick = () => {
     this.cloneImage()
-
-    this.setState(
-      { queued: true },
-
-      // Hide the SearchResult after 0.6s
-      () => {
-        window.setTimeout(
-          () => this.setState({ hidden: true }),
-          600
-        )
-      }
-    )
+    this.setState({ queued: true })
   }
 
   cloneImage = () => {
@@ -63,12 +51,9 @@ class SearchResult extends Component {
 
   render() {
     const { patron } = this.props
-    const queuedClass = this.state.queued ? 'queued' : ''
-    const hiddenClass = this.state.hidden ? 'hidden' : ''
-    const className = `SearchResult ${queuedClass} ${hiddenClass}`
 
     return (
-      <div className={className}>
+      <div className="SearchResult">
         <div className="imgContainer">
           <img
             className="patron"
