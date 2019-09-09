@@ -14,7 +14,6 @@ function PageSelector(props) {
         first
       >
         <FontAwesomeIcon
-          style={{ color: 'white' }}
           icon={faSearch}
           size="1x"
         />
@@ -24,7 +23,6 @@ function PageSelector(props) {
         last
       >
         <FontAwesomeIcon
-          style={{ color: 'white' }}
           icon={faBars}
           size="1x"
         />

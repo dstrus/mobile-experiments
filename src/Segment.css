@@ -15,14 +15,6 @@
   justify-content: center;
 }
 
-.Segment .svg-inline--fa path {
-  fill: #e56000;
-}
-
-.Segment.active .svg-inline--fa path {
-  fill: white;
-}
-
 .Segment.active {
   background-color: #e56000;
   color: white;
