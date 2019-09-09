@@ -4,11 +4,12 @@ import './index.css'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
+import { patrons } from './lib/patrons'
 import rootReducer from './reducers'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 
-const store = createStore(rootReducer, { queue: [] } )
+const store = createStore(rootReducer, { queue: [], searchResults: patrons } )
 
 ReactDOM.render(
   <Provider store={store}>

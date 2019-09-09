@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhoneAlt, faTag, faSearch } from '@fortawesome/free-solid-svg-icons'
 
 import Segment from './Segment'
-import SearchResultList from './SearchResultList'
+import SearchResultList from './containers/SearchResultListContainer'
 
 import './Search.css'
 
@@ -46,7 +46,7 @@ function Search(props) {
         </div>
       </form>
 
-      <SearchResultList addToQueue={props.addToQueue} />
+      <SearchResultList />
     </div>
   )
 }
