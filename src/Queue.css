@@ -7,3 +7,11 @@
   color: #666;
   background-color: #f3f3f3;
 }
+
+.blankSlate {
+  width: 100%;
+  height: calc(80vh - 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -8,11 +8,19 @@ function Queue(props) {
   return (
     <div className="Queue">
       <Header />
-      {/* <h2>My Items</h2>
-      <QueueItemList patrons={props.myQueue} /> */}
+      {
+        props.queue.length === 0
+          ? <div className="blankSlate">
+                <span role="img" aria-label="">🎉</span> The queue is empty! <span role="img" aria-label="">🎉</span>
+            </div>
 
-      <h2>All Items</h2>
-      <QueueItemList patrons={props.queue} />
+          : <>
+              <h2>All Items</h2>
+              <QueueItemList patrons={props.queue} />
+            </>
+      }
+
+
     </div>
   )
 }
