@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
+import { BrowserRouter, Route } from 'react-router-dom'
 
 import { patrons } from './lib/patrons'
 import rootReducer from './reducers'
@@ -13,7 +14,9 @@ const store = createStore(rootReducer, { queue: [], searchResults: patrons } )
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <BrowserRouter>
+      <Route component={App} />
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 )

@@ -1,8 +1,8 @@
 .Segment {
+  border: 1px solid #e56000;
   color: #e56000;
-  border-color: #e56000;
   background-color: transparent;
-  padding: 0.25rem;
+  padding: 4px;
   width: 2.5rem;
   height: 1.75rem;
   outline: none;
@@ -10,6 +10,9 @@
   font-family: 'helvetica';
   font-size: 14px;
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .Segment .svg-inline--fa path {

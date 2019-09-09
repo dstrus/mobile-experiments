@@ -10,8 +10,7 @@ function PageSelector(props) {
   return (
     <div className="PageSelector">
       <Segment
-        onClick={props.showSearch}
-        active={props.searchIsShowing}
+        to="/search"
         first
       >
         <FontAwesomeIcon
@@ -21,8 +20,7 @@ function PageSelector(props) {
         />
       </Segment>
       <Segment
-        onClick={props.hideSearch}
-        active={!props.searchIsShowing}
+        to="/queue"
         last
       >
         <FontAwesomeIcon

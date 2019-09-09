@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { Route, Redirect, Switch } from 'react-router-dom'
 
-import Header from './Header'
 import Search from './Search'
 import Queue from './containers/QueueContainer'
 
@@ -8,17 +8,8 @@ import './App.css';
 
 class App extends Component {
   state = {
-    searchIsShowing: true,
     searchingByPhone: true,
     searchingByTag: false,
-  }
-
-  showSearch = () => {
-    this.setState({ searchIsShowing: true })
-  }
-
-  hideSearch = () => {
-    this.setState({ searchIsShowing: false })
   }
 
   searchByPhone = () => {
@@ -38,30 +29,23 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header
-          searchIsShowing={this.state.searchIsShowing}
-          showSearch={this.showSearch}
-          hideSearch={this.hideSearch}
-        />
-
-        <div>
-          {
-            this.state.searchIsShowing && (
+        <Switch>
+          <Route 
+            path="/search" 
+            render={() => (
               <Search
                 searchingByPhone={this.state.searchingByPhone}
                 searchingByTag={this.state.searchingByTag}
                 searchByPhone={this.searchByPhone}
                 searchByTag={this.searchByTag}
               />
-            )
-          }
-
-          {
-            !this.state.searchIsShowing && <Queue />
-          }
-        </div>
+            )}
+          />
+          <Route path="/queue" component={Queue} />
+          <Route render={() => <Redirect to="/search" />} />
+        </Switch>
       </div>
-    );
+    )
   }
 }
 

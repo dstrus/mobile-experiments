@@ -1,14 +1,9 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 import './Segment.css'
 
 function Segment(props) {
-  let active = props.active
-
-  function onClick() {
-    active = true
-    props.onClick()
-  }
 
   let className = 'Segment'
   if (props.first) {
@@ -17,14 +12,11 @@ function Segment(props) {
   if (props.last) {
     className += ' last'
   }
-  if (active) {
-    className += ' active'
-  }
 
   return (
-    <button type="button" style={props.style} className={className} onClick={onClick}>
+    <NavLink to={props.to} style={props.style} className={className}>
       {props.children}
-    </button>
+    </NavLink>
   )
 }
 
