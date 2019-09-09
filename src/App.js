@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Header from './Header'
 import Search from './Search'
 import SideMenu from './SideMenu'
-import Queue from './Queue'
+import Queue from './containers/QueueContainer'
 
 import './App.css';
 
@@ -85,12 +85,7 @@ class App extends Component {
           }
 
           {
-            !this.state.searchIsShowing && (
-              <Queue
-                queue={this.state.queue}
-                myQueue={this.state.myQueue}
-              />
-            )
+            !this.state.searchIsShowing && <Queue />
           }
         </div>
       </div>

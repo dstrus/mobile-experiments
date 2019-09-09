@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { patrons } from './lib/patrons'
-import SearchResult from './SearchResult'
+import SearchResult from './containers/SearchResultContainer'
 
 import './SearchResultList.css'
 
