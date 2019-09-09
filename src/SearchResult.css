@@ -50,6 +50,7 @@ img.clone.animated {
   position: relative;
   background-color: transparent;
   border: 0;
+  width: 3rem;
 }
 
 .SearchResult .menu {

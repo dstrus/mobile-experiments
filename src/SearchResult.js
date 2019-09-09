@@ -1,22 +1,17 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faPlusCircle, faCheck } from '@fortawesome/free-solid-svg-icons'
 
 import './SearchResult.css'
 
 class SearchResult extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      queued: false,
-      hidden: false,
-    }
     this.imgRef = React.createRef()
   }
 
   onClick = () => {
     this.cloneImage()
-    this.setState({ queued: true })
   }
 
   cloneImage = () => {
@@ -78,12 +73,24 @@ class SearchResult extends Component {
           <p>KIOSK A</p>
         </div>
 
-        <button onClick={this.onClick}>
-          <div>
-            <FontAwesomeIcon icon={faBars} className="menu" />
-            <FontAwesomeIcon icon={faPlusCircle} className="circle" />
-          </div>
-          queue
+        <button onClick={this.onClick} disabled={patron.isQueued}>
+          {
+            patron.isQueued && (
+              <FontAwesomeIcon icon={faCheck} />
+            )
+          }
+
+          {
+            !patron.isQueued && (
+              <>
+                <div>
+                  <FontAwesomeIcon icon={faBars} className="menu" />
+                  <FontAwesomeIcon icon={faPlusCircle} className="circle" />
+                </div>
+                queue
+              </>
+            )
+          }
         </button>
       </div>
     )
