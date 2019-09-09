@@ -11,25 +11,20 @@ import './Search.css'
 function Search(props) {
   return (
     <>
-      <Header
-        searchIsShowing={true}
-        showSearch={()=> {}}
-        hideSearch={()=> {}}
-      />
+      <Header />
       <div className="Search">
         <form>
           <div>
             <Segment
               first
-              active={props.searchingByPhone}
-              onClick={props.searchByPhone}
+              to="/search/phone"
             >
               <FontAwesomeIcon icon={faPhoneAlt} />
             </Segment>
             <Segment
               last
               active={props.searchingByTag}
-              onClick={props.searchByTag}
+              to="/search/tag"
             >
               <FontAwesomeIcon icon={faTag} />
             </Segment>

@@ -7,11 +7,7 @@ import './Queue.css'
 function Queue(props) {
   return (
     <div className="Queue">
-      <Header
-        searchIsShowing={false}
-        showSearch={() => {}}
-        hideSearch={() => {}}
-      />
+      <Header />
       {/* <h2>My Items</h2>
       <QueueItemList patrons={props.myQueue} /> */}
 
