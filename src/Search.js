@@ -9,12 +9,6 @@ import SearchResultList from './containers/SearchResultListContainer'
 import './Search.css'
 
 function Search(props) {
-  const segmentStyle = {
-    // width: '50%',
-    fontSize: '12px',
-    height: '1.75rem'
-  }
-
   return (
     <>
       <Header
@@ -27,7 +21,6 @@ function Search(props) {
           <div>
             <Segment
               first
-              style={segmentStyle}
               active={props.searchingByPhone}
               onClick={props.searchByPhone}
             >
@@ -35,14 +28,13 @@ function Search(props) {
             </Segment>
             <Segment
               last
-              style={segmentStyle}
               active={props.searchingByTag}
               onClick={props.searchByTag}
             >
               <FontAwesomeIcon icon={faTag} />
             </Segment>
           </div>
-  
+
           <div className="inputContainer">
             <FontAwesomeIcon icon={faSearch} className="search-icon" />
             <input
@@ -52,7 +44,7 @@ function Search(props) {
             />
           </div>
         </form>
-  
+
         <SearchResultList />
       </div>
     </>

@@ -13,10 +13,22 @@ function Segment(props) {
     className += ' last'
   }
 
+  if (props.to) {
+    return (
+      <NavLink to={props.to} className={className}>
+        {props.children}
+      </NavLink>
+    )
+  }
+
+  if (props.active) {
+    className += ' active'
+  }
+
   return (
-    <NavLink to={props.to} style={props.style} className={className}>
+    <button type="button" className={className} onClick={props.onClick}>
       {props.children}
-    </NavLink>
+    </button>
   )
 }
 
