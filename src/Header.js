@@ -11,6 +11,10 @@ class Header extends Component {
     reloading: false
   }
 
+  signOut = () => {
+    window.confirm('Are you sure you want to sign out?')
+  }
+
   reload = () => {
     this.setState({ reloading: true })
     window.location.reload()
@@ -30,7 +34,7 @@ class Header extends Component {
           <button className={reloadClassName} onClick={this.reload}>
             <FontAwesomeIcon icon={faRedoAlt} />
           </button>
-          <button className="signOut" onClick={this.props.showMenu}>
+          <button className="signOut" onClick={this.signOut}>
             <FontAwesomeIcon icon={faSignOutAlt} />
           </button>
         </div>
