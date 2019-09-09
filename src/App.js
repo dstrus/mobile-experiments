@@ -13,8 +13,6 @@ class App extends Component {
     searchingByPhone: true,
     searchingByTag: false,
     menuIsShowing: false,
-    queue: [],
-    myQueue: [],
   }
 
   showSearch = () => {
@@ -47,14 +45,6 @@ class App extends Component {
     this.setState({ menuIsShowing: false })
   }
 
-  addToQueue = (patron) => {
-    this.setState((state, props) => {
-      const { queue } = state
-      queue.push(patron)
-      this.setState({ queue })
-    })
-  }
-
   render() {
     return (
       <div className="App">
@@ -68,7 +58,6 @@ class App extends Component {
           showSearch={this.showSearch}
           hideSearch={this.hideSearch}
           showMenu={this.showMenu}
-          queue={this.state.queue}
         />
 
         <div>
@@ -79,7 +68,6 @@ class App extends Component {
                 searchingByTag={this.state.searchingByTag}
                 searchByPhone={this.searchByPhone}
                 searchByTag={this.searchByTag}
-                addToQueue={this.addToQueue}
               />
             )
           }

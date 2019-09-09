@@ -2,7 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignOutAlt, faRedoAlt } from '@fortawesome/free-solid-svg-icons'
 
-import PageSelector from './PageSelector'
+import PageSelector from './containers/PageSelectorContainer'
 
 import './Header.css'
 
