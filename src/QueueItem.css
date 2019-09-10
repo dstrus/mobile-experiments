@@ -37,12 +37,6 @@ img.patron.small {
   width: 50px;
 }
 
-img.clone.animated {
-  margin-top: -15px !important;
-  margin-left: 35px !important;
-  transform: scale(0.4);
-}
-
 .QueueItem .phone {
   font-size: 12px;
   margin-top: 0.5rem;
