@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFilter } from '@fortawesome/free-solid-svg-icons'
+import { faFilter, faTimes } from '@fortawesome/free-solid-svg-icons'
 
 import QueueItemList from './QueueItemList'
 import Header from './containers/HeaderContainer'
@@ -11,7 +11,10 @@ function Queue(props) {
     <div className="Queue">
       <Header />
       <div className="queue-sub-header">
-        <button>All<button>X</button></button>
+        <span className="criterion">
+          All
+          <button><FontAwesomeIcon icon={faTimes} /></button>
+        </span>
         <button className="icon-button"><FontAwesomeIcon icon={faFilter} /></button>
       </div>
       {
