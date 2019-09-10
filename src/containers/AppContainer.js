@@ -1,5 +1,7 @@
 import { connect } from 'react-redux'
 
+import { signIn } from '../actions'
+
 import App from '../App'
 
 function mapStateToProps(state) {
@@ -8,5 +10,11 @@ function mapStateToProps(state) {
   }
 }
 
-const AppContainer = connect(mapStateToProps)(App)
+function mapDispatchToProps(dispatch) {
+  return {
+    signIn: () => dispatch(signIn())
+  } 
+}
+
+const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App)
 export default AppContainer

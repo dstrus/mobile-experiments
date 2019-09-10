@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom'
 
 import Search from './Search'
@@ -7,56 +7,65 @@ import SignIn from './containers/SignInContainer'
 
 import './App.css';
 
-function App(props) {
-  const signedIn = () => {
-    return props.uid
+class App extends Component {
+
+  componentDidMount() {
+    if (window.localStorage.getItem('uid')) {
+      this.props.signIn()
+    }
   }
 
-  return (
-    <div className="App">
-      <Switch>
-        <Route
-          path="/sign-in"
-          render={
-            () => (
-              signedIn()
-                ? <Redirect to="/search/phone" />
-                : <SignIn />
-            )
-          }
-        />
-        <Route
-          path="/search/:by?"
-          render={
-            () => (
-              signedIn()
-                ? <Search />
-                : <Redirect to="/sign-in" />
-            )
-          }
-        />
-        <Route
-          path="/queue"
-          render={
-            () => (
-              signedIn()
-                ? <Queue />
-                : <Redirect to="/sign-in" />
-            )
-          }
-        />
-        <Route
-          render={
-            () => (
-              signedIn()
-                ? <Redirect to="/search/phone" />
-                : <Redirect to="/sign-in" />
-            )
-          }
-        />
-      </Switch>
-    </div>
-  )
+  signedIn = () => {
+    return this.props.uid
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Switch>
+          <Route
+            path="/sign-in"
+            render={
+              () => (
+                this.signedIn()
+                  ? <Redirect to="/search/phone" />
+                  : <SignIn />
+              )
+            }
+          />
+          <Route
+            path="/search/:by?"
+            render={
+              () => (
+                this.signedIn()
+                  ? <Search />
+                  : <Redirect to="/sign-in" />
+              )
+            }
+          />
+          <Route
+            path="/queue"
+            render={
+              () => (
+                this.signedIn()
+                  ? <Queue />
+                  : <Redirect to="/sign-in" />
+              )
+            }
+          />
+          <Route
+            render={
+              () => (
+                this.signedIn()
+                  ? <Redirect to="/search/phone" />
+                  : <Redirect to="/sign-in" />
+              )
+            }
+          />
+        </Switch>
+      </div>
+    )
+  }
 }
 
 export default App;
