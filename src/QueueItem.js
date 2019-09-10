@@ -15,7 +15,6 @@ function QueueItem(props) {
           alt={patron.phone}
         />
         <div className="phone">{patron.phone}</div>
-        <p>KIOSK A</p>
       </div>
 
       <div className="details">
@@ -24,7 +23,11 @@ function QueueItem(props) {
             patron.tags.map((tag, i) => {
               return (
                 <div className="tag" style={{ backgroundColor: tag.color }} key={i}>
-                  <div className="type">{tag.type}</div>
+                  <img
+                    className="tag small"
+                    src={tag.photo}
+                    alt={patron.phone}
+                  />
                   <div className="number">{tag.number}</div>
                 </div>
               )
@@ -39,6 +42,8 @@ function QueueItem(props) {
           <FontAwesomeIcon icon={faShare} className="return" />
         </div>
         return all
+
+        <p>KIOSK A</p>
       </button>
     </div>
   )

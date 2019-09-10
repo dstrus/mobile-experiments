@@ -28,13 +28,20 @@
   white-space: nowrap;
 }
 
-img.patron {
+img.patron,
+img.tag {
   width: 80px;
   border-radius: 50%;
 }
 
 img.patron.small {
   width: 50px;
+}
+
+img.tag.small {
+  width: 42px;
+  margin: 0;
+  padding: 0;
 }
 
 img.clone.animated {
@@ -44,7 +51,7 @@ img.clone.animated {
 }
 
 .QueueItem .phone {
-  font-size: 12px;
+  font-size: 10px;
   margin-top: 0.5rem;
 }
 
@@ -66,6 +73,11 @@ img.clone.animated {
   border: 0;
 }
 
+.QueueItem button p {
+  text-align: center;
+  margin-left: 0;
+}
+
 .QueueItem .return {
   font-size: 26px;
 }
@@ -82,7 +94,7 @@ img.clone.animated {
 
 .details {
   flex: 1;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
 }
 
 .tags {
@@ -95,12 +107,14 @@ img.clone.animated {
 .tag {
   color: white;
   padding: 0.5rem;
-  margin-left: 0.5rem;
-  margin-top: 0.5rem;
+  margin-left: 0.25rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
   border-radius: 6px;
 }
 
 .tag .number {
+  margin-top: 0.25rem;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 16px;
 }
