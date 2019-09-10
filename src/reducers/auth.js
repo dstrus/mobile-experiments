@@ -8,8 +8,7 @@ function auth(state = {}, action) {
       }
     case SIGN_OUT:
       return {
-        state: undefined,
-        uid: action.payload
+        uid: undefined
       }
     default:
       return state

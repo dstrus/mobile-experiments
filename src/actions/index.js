@@ -15,8 +15,7 @@ export function signIn() {
 export function signOut() {
   window.localStorage.removeItem('uid')
   return {
-    type: 'SIGN_OUT',
-    payload: null
+    type: 'SIGN_OUT'
   }
 }
 
