@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 3rem;
+  background-image: url(./assets/background_login.png);
 }
 
 .SignIn input {
@@ -13,4 +14,21 @@
   border: 1px solid #ccc;
   text-align: center;
   padding: 0.5rem 0.25rem;
+}
+
+.SignIn .logo img {
+  max-width: 70vw;
+  margin-bottom: 2rem;
+}
+
+.SignIn .inputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.SignIn .container {
+  font-size: 0.8rem;
+  text-align: center;
 }

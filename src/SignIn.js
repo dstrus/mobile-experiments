@@ -1,6 +1,7 @@
 import React from 'react'
 
 import './SignIn.css'
+import logo from './assets/chexology_logo@2x.png'
 
 function SignIn(props) {
   const onChange = (ev) => {
@@ -55,35 +56,45 @@ function SignIn(props) {
 
   return (
     <div className="SignIn">
-      <input
-        type="text"
-        className="signInCode"
-        onChange={onChange}
-        autoFocus />
-      <input
-        type="text"
-        className="signInCode"
-        onChange={onChange}
-        onKeyDown={onKeyDown}
-      />
-      <input
-        type="text"
-        className="signInCode"
-        onChange={onChange}
-        onKeyDown={onKeyDown}
-      />
-      <input
-        type="text"
-        className="signInCode"
-        onChange={onChange}
-        onKeyDown={onKeyDown}
-      />
-      <input
-        type="text"
-        className="signInCode"
-        onChange={onChange}
-        onKeyDown={onKeyDown}
-      />
+      <div className="container">
+        <div className="logo">
+          <img src={logo} alt="Chexology"/>
+        </div>
+
+        <div className="inputs">
+          <input
+            type="text"
+            className="signInCode"
+            onChange={onChange}
+            autoFocus />
+          <input
+            type="text"
+            className="signInCode"
+            onChange={onChange}
+            onKeyDown={onKeyDown}
+          />
+          <input
+            type="text"
+            className="signInCode"
+            onChange={onChange}
+            onKeyDown={onKeyDown}
+          />
+          <input
+            type="text"
+            className="signInCode"
+            onChange={onChange}
+            onKeyDown={onKeyDown}
+          />
+          <input
+            type="text"
+            className="signInCode"
+            onChange={onChange}
+            onKeyDown={onKeyDown}
+          />
+        </div>
+
+        <p>Please enter your 5-letter code.</p>
+      </div>
     </div>
   )
 }
