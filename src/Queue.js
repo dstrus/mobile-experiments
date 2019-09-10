@@ -15,6 +15,8 @@ function Queue(props) {
             </div>
 
           : <>
+              <h2>My Items</h2>
+              <p>Select items from below to add to my items.</p>
               <h2>All Items</h2>
               <QueueItemList patrons={props.queue} />
             </>

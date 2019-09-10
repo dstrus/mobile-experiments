@@ -28,7 +28,7 @@
   white-space: nowrap;
 }
 
-img.patron,
+.QueueItem img.patron,
 img.tag {
   width: 80px;
   border-radius: 50%;

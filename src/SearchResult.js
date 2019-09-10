@@ -65,16 +65,6 @@ class SearchResult extends Component {
 
         <div>
           <div className="phone">{patron.phone}</div>
-          <small>Arrival: 10/13/19 @12:50pm</small><br />
-          <small>
-            Tags:
-            {
-              patron.tags.map((tag, i) => {
-                const prefix = i === 0 ? '' : ','
-                return (<span key={i}>{prefix} {tag.number}</span>)
-              })
-            }
-          </small>
           <p>KIOSK A</p>
         </div>
 
@@ -92,15 +82,7 @@ class SearchResult extends Component {
           }
 
           {
-            !this.state.loading && !patron.isQueued && (
-              <>
-                <div>
-                  <FontAwesomeIcon icon={faBars} className="menu" />
-                  <FontAwesomeIcon icon={faPlusCircle} className="circle" />
-                </div>
-                queue
-              </>
-            )
+            !this.state.loading && !patron.isQueued && 'QUEUE'
           }
         </button>
       </div>

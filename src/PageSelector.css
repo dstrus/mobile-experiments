@@ -14,7 +14,7 @@
 
 .PageSelector a {
   border: none;
-  color: #777c80;
+  color: #c9c9c9;
   background-color: transparent;
   margin-right: 20px;
   outline: none;
@@ -26,8 +26,9 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  letter-spacing: 0.5px;
 }
 
 .PageSelector a.active {
-  color: white;
+  color: #777c80;
 }
