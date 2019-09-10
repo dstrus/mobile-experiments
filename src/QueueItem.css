@@ -1,6 +1,5 @@
 .QueueItem {
   background-color: white;
-  border-top: 1px solid #c9c9c9;
   border-bottom: 1px solid #c9c9c9;
   padding: 0.5rem 1rem;
   width: 100%;
@@ -45,7 +44,10 @@ img.tag.small {
 }
 
 .QueueItem .phone {
-  font-size: 10px;
+  font-size: 0.8rem;
+  color: #777c80;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   margin-top: 0.5rem;
 }
 
@@ -62,14 +64,25 @@ img.tag.small {
 }
 
 .QueueItem button {
-  position: relative;
-  background-color: transparent;
+  color: white;
+  background-color: #777c80;
   border: 0;
+  border-radius: 8px;
+  width: 5rem;
+  height: 2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
 }
 
-.QueueItem button p {
+.QueueItem div p {
+  font-size: 0.8rem;
+  color: #777c80;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   text-align: center;
   margin-left: 0;
+  margin-top: 10px;
 }
 
 .QueueItem .return {

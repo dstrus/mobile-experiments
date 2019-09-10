@@ -1,6 +1,4 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShare } from '@fortawesome/free-solid-svg-icons'
 
 import './QueueItem.css'
 
@@ -37,14 +35,12 @@ function QueueItem(props) {
 
       </div>
 
-      <button onClick={() => props.returnAllItems(patron)}>
-        <div>
-          <FontAwesomeIcon icon={faShare} className="return" />
-        </div>
-        return all
-
+      <div>
+        <button onClick={() => props.returnAllItems(patron)}>
+          SELECT
+        </button>
         <p>KIOSK A</p>
-      </button>
+      </div>
     </div>
   )
 }

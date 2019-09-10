@@ -1,5 +1,5 @@
 .QueueItemList {
-  background-color: #f3f3f3;
+  background-color: white;
   width: 100%;
   overflow-y: scroll;
   height: calc(100vh - 48px - 4rem);
