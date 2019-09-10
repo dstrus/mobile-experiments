@@ -65,6 +65,10 @@
   letter-spacing: 2px;
 }
 
+.SearchResult button[disabled] {
+  background-color: #ccc;
+}
+
 .SearchResult .menu {
   font-size: 26px;
 }

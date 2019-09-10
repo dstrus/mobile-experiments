@@ -11,7 +11,7 @@ function Queue(props) {
       {
         props.queue.length === 0
           ? <div className="blankSlate">
-                <span role="img" aria-label="">🎉</span> The queue is empty! <span role="img" aria-label="">🎉</span>
+              <span role="img" aria-label="">🎉</span> The queue is empty! <span role="img" aria-label="">🎉</span>
             </div>
 
           : <>
