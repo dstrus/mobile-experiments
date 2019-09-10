@@ -1,10 +1,10 @@
 .Header {
-  background-color: #ededed;
+  background-color: #050505;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 48px;
-  color: white;
+  color: #777c80;
   padding: 0 1rem;
 }
 
@@ -12,7 +12,7 @@
 .Header button.reload {
   background-color: transparent;
   border: 0;
-  color: grey;
+  color: white;
   font-size: 0.95rem;
   font-weight: 500;
   padding: 0;

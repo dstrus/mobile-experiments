@@ -1,6 +1,6 @@
 .Segment {
   border: none;
-  color: white;
+  color: #777c80;
   background-color: transparent;
   margin-right: 20px;
   outline: none;
@@ -15,5 +15,5 @@
 }
 
 .Segment.active {
-  color: grey;
+  color: white;
 }
