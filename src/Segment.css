@@ -1,31 +1,19 @@
 .Segment {
-  border: 1px solid #e56000;
-  color: #e56000;
+  border: none;
+  color: white;
   background-color: transparent;
-  padding: 4px;
-  width: 2.5rem;
-  height: 1.75rem;
+  margin-right: 20px;
   outline: none;
   border-left: none;
   font-family: 'helvetica';
-  font-size: 14px;
+  font-size: 1rem;
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 
 .Segment.active {
-  background-color: #e56000;
-  color: white;
-}
-
-.Segment.first {
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
-  border-left: 1px solid #e56000;
-}
-.Segment.last {
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
+  color: grey;
 }

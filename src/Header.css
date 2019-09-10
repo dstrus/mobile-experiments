@@ -1,5 +1,5 @@
 .Header {
-  background-color: #050505;
+  background-color: #ededed;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,8 +12,9 @@
 .Header button.reload {
   background-color: transparent;
   border: 0;
-  color: white;
-  font-size: 20px;
+  color: grey;
+  font-size: 0.95rem;
+  font-weight: 500;
   padding: 0;
 }
 

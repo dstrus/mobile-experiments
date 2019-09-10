@@ -13,19 +13,13 @@ function PageSelector(props) {
         to="/search"
         first
       >
-        <FontAwesomeIcon
-          icon={faSearch}
-          size="1x"
-        />
+        <h3>Search</h3>
       </Segment>
       <Segment
         to="/queue"
         last
       >
-        <FontAwesomeIcon
-          icon={faBars}
-          size="1x"
-        />
+        <h3>Queue</h3>
         {
           props.queue.length !== 0 && (
             <div className="badge">
