@@ -1,4 +1,6 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faBars } from '@fortawesome/free-solid-svg-icons'
 
@@ -9,13 +11,13 @@ import './PageSelector.css'
 function PageSelector(props) {
   return (
     <div className="PageSelector">
-      <Segment
+      <NavLink
         to="/search"
         first
       >
         <h3>Search</h3>
-      </Segment>
-      <Segment
+      </NavLink>
+      <NavLink
         to="/queue"
         last
       >
@@ -27,7 +29,7 @@ function PageSelector(props) {
             </div>
           )
         }
-      </Segment>
+      </NavLink>
     </div>
   )
 }
