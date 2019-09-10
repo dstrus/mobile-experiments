@@ -14,7 +14,6 @@ function App(props) {
 
   return (
     <div className="App">
-      <SignIn />
       <Switch>
         <Route
           path="/sign-in"
