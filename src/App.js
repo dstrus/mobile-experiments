@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom'
 
-import Search from './Search'
+import Search from './containers/SearchContainer'
 import Queue from './containers/QueueContainer'
 import SignIn from './containers/SignInContainer'
 

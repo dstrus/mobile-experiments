@@ -5,7 +5,6 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route } from 'react-router-dom'
 
-import { patrons } from './lib/patrons'
 import rootReducer from './reducers'
 import App from './containers/AppContainer'
 import * as serviceWorker from './serviceWorker'
@@ -14,7 +13,7 @@ const store = createStore(
   rootReducer,
   {
     queue: [],
-    searchResults: patrons,
+    searchResults: [],
     auth: {},
   }
 )
