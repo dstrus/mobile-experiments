@@ -7,10 +7,17 @@ import { BrowserRouter, Route } from 'react-router-dom'
 
 import { patrons } from './lib/patrons'
 import rootReducer from './reducers'
-import App from './App'
+import App from './containers/AppContainer'
 import * as serviceWorker from './serviceWorker'
 
-const store = createStore(rootReducer, { queue: [], searchResults: patrons } )
+const store = createStore(
+  rootReducer,
+  {
+    queue: [],
+    searchResults: patrons,
+    auth: {},
+  }
+)
 
 ReactDOM.render(
   <Provider store={store}>
