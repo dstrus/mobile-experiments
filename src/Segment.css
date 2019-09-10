@@ -1,6 +1,6 @@
 .Segment {
-  border: 1px solid #e56000;
-  color: #e56000;
+  border: 1px solid #777c80;
+  color: #777c80;
   background-color: transparent;
   padding: 4px;
   width: 2.5rem;
@@ -16,14 +16,14 @@
 }
 
 .Segment.active {
-  background-color: #e56000;
+  background-color: #777c80;
   color: white;
 }
 
 .Segment.first {
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
-  border-left: 1px solid #e56000;
+  border-left: 1px solid #777c80;
 }
 .Segment.last {
   border-top-right-radius: 6px;
