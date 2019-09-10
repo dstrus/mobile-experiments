@@ -2,7 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhoneAlt, faTag, faSearch } from '@fortawesome/free-solid-svg-icons'
 
-import Header from './Header'
+import Header from './containers/HeaderContainer'
 import Segment from './Segment'
 import SearchResultList from './containers/SearchResultListContainer'
 

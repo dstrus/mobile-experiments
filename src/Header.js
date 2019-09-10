@@ -12,7 +12,10 @@ class Header extends Component {
   }
 
   signOut = () => {
-    window.confirm('Are you sure you want to sign out?')
+    const selection = window.confirm('Are you sure you want to sign out?')  
+    if (selection) {
+      this.props.signOut()
+    }
   }
 
   reload = () => {

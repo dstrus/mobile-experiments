@@ -1,7 +1,7 @@
 import React from 'react'
 
 import QueueItemList from './QueueItemList'
-import Header from './Header'
+import Header from './containers/HeaderContainer'
 import './Queue.css'
 
 function Queue(props) {
