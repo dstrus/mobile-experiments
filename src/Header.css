@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: space-between;
   height: 48px;
-  color: white;
+  color: #777c80;
   padding: 0 1rem;
 }
 
@@ -13,7 +13,8 @@
   background-color: transparent;
   border: 0;
   color: white;
-  font-size: 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
   padding: 0;
 }
 

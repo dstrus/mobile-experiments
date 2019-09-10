@@ -1,4 +1,6 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faBars } from '@fortawesome/free-solid-svg-icons'
 
@@ -9,23 +11,17 @@ import './PageSelector.css'
 function PageSelector(props) {
   return (
     <div className="PageSelector">
-      <Segment
+      <NavLink
         to="/search"
         first
       >
-        <FontAwesomeIcon
-          icon={faSearch}
-          size="1x"
-        />
-      </Segment>
-      <Segment
+        <h3>Search</h3>
+      </NavLink>
+      <NavLink
         to="/queue"
         last
       >
-        <FontAwesomeIcon
-          icon={faBars}
-          size="1x"
-        />
+        <h3>Queue</h3>
         {
           props.queue.length !== 0 && (
             <div className="badge">
@@ -33,7 +29,7 @@ function PageSelector(props) {
             </div>
           )
         }
-      </Segment>
+      </NavLink>
     </div>
   )
 }
