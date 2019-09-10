@@ -1,4 +1,4 @@
-.Queue .queue-sub-header {
+.Queue .filterBar {
   width: 100vw;
   color: #777c80;
   background-color: #ededed;
@@ -10,12 +10,11 @@
   padding: 1rem;
 }
 
-.Queue .queue-sub-header .criterion,
-.Queue .queue-sub-header button {
+.Queue .filterBar .criterion,
+.Queue .filterBar button {
   background-color: #ddd;
   border: 0;
   border-radius: 8px;
-  font-family: 'helvetica';
   padding: 4px;
   font-size: 0.8rem;
   font-weight: 600;
@@ -28,25 +27,31 @@
   align-items: center;
 }
 
-.Queue .queue-sub-header .criterion {
+.Queue .filterBar .criterion:first-child {
+  margin-left: 0;
+}
+
+.Queue .filterBar .criterion {
   height: 1.75rem;
+  margin-left: 0.5rem;
+  padding: 0 0.5rem;
 }
 
-.Queue .queue-sub-header .criterion button {
-  padding: 0 0.25rem 0 0.5rem;
+.Queue .filterBar .criterion button {
+  padding: 0 0 0 0.5rem;
 }
 
-.Queue .queue-sub-header .criterion button path {
+.Queue .filterBar .criterion button path {
   fill: #999;
 }
 
-.Queue .queue-sub-header .icon-button {
+.Queue .filterBar .icon-button {
   border: 0.5px solid #ccc;
   background: white;
   padding: 6px 15px;
 }
 
-.Queue .queue-sub-header button path {
+.Queue .filterBar button path {
   color: #ccc;
   font-size: 14px;
 }
@@ -77,4 +82,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.Queue .listContainer {
+  overflow-y: scroll;
+  height: calc(100vh - 48px - 4rem);
+  -webkit-overflow-scrolling: touch;
 }

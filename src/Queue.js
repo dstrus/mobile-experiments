@@ -10,11 +10,18 @@ function Queue(props) {
   return (
     <div className="Queue">
       <Header />
-      <div className="queue-sub-header">
-        <span className="criterion">
-          All
-          <button><FontAwesomeIcon icon={faTimes} /></button>
-        </span>
+      <div className="filterBar">
+        <div className="filters">
+          <span className="criterion">
+            Tags 0-200
+            <button><FontAwesomeIcon icon={faTimes} /></button>
+          </span>
+
+          <span className="criterion">
+            KIOSK A
+            <button><FontAwesomeIcon icon={faTimes} /></button>
+          </span>
+        </div>
         <button className="icon-button"><FontAwesomeIcon icon={faFilter} /></button>
       </div>
       {
@@ -23,12 +30,12 @@ function Queue(props) {
               <span role="img" aria-label="">🎉</span> The queue is empty! <span role="img" aria-label="">🎉</span>
             </div>
 
-          : <>
-              <h2>My Items</h2>
+          : <div className="listContainer">
+              <h2>My Items (0)</h2>
               <p>Select items from below to add to my items.</p>
-              <h2>All Items</h2>
+              <h2>All Items ({props.queue.length})</h2>
               <QueueItemList patrons={props.queue} />
-            </>
+            </div>
       }
 
 
