@@ -1,4 +1,5 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhoneAlt, faTag, faSearch } from '@fortawesome/free-solid-svg-icons'
 
@@ -9,6 +10,12 @@ import SearchResultList from './containers/SearchResultListContainer'
 import './Search.css'
 
 function Search(props) {
+  let searchPlaceholder = 'Search'
+
+  if (props.match.params.by) {
+    searchPlaceholder += ` by ${props.match.params.by}`
+  }
+
   return (
     <>
       <Header />
@@ -35,7 +42,7 @@ function Search(props) {
             <input
               autoFocus
               type="tel"
-              placeholder="Search"
+              placeholder={searchPlaceholder}
             />
           </div>
         </form>
@@ -46,4 +53,4 @@ function Search(props) {
   )
 }
 
-export default Search
+export default withRouter(Search)
