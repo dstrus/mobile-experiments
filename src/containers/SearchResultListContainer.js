@@ -4,7 +4,7 @@ import SearchResultList from '../SearchResultList'
 
 function mapStateToProps(state) {
   return {
-    searchResults: state.searchResults
+    searchResults: state.search.results
   }
 }
 
