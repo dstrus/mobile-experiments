@@ -20,5 +20,6 @@
 }
 
 .Item .tagNumber h2.white {
+  border: 0;
   padding: 1px;
 }

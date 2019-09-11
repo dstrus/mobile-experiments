@@ -15,36 +15,36 @@ button {
 }
 
 .blue {
-  color: white;
+  color: white !important;
   background-color: #084c61;
 }
 
 .gold {
-  color: black;
+  color: black !important;
   background-color: #f4b027;
 }
 
 .grey {
-  color: white;
+  color: white !important;
   background-color: #777c80;
 }
 
 .green {
-  color: white;
+  color: white !important;
   background-color: #68a21d;
 }
 
 .orange {
-  color: white;
+  color: white !important;
   background-color: #e56000;
 }
 
 .white {
-  color: black;
+  color: black !important;
   background-color: #f9f9f9;
   border: 1px solid #ccc;
 }
 
 .red {
-  color: white;
+  color: white !important;
 }
