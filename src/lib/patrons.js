@@ -3,7 +3,7 @@ export const patrons = [
     id: 1,
     phone: 'XXX-X12-7609',
     tags: [
-      { number: '121', type: 'bag', color: '#084c61', photo: '/assets/item1.jpg' },
+      { number: '37', type: 'bag', color: '#084c61', photo: '/assets/item1.jpg' },
       { number: '67', type: 'coat', color: '#f4b027', photo: '/assets/item2.jpg' }
     ]
   },
@@ -29,7 +29,7 @@ export const patrons = [
     tags: [
       { number: '160', type: 'bag', color: '#68a21d', photo: '/assets/item1.jpg' },
       { number: '131', type: 'coat', color: '#084c61', photo: '/assets/item1.jpg' },
-      { number: '117', type: 'coat', color: '#084c61', photo: '/assets/item1.jpg' },
+      { number: '123', type: 'coat', color: '#084c61', photo: '/assets/item1.jpg' },
       { number: '41', type: 'coat', color: '#f4b027', photo: '/assets/item1.jpg' },
     ]
   },
@@ -46,7 +46,7 @@ export const patrons = [
     phone: 'XXX-X54-3309',
     tags: [
       { number: '141', type: 'bag', color: '#f4b027', photo: '/assets/item1.jpg' },
-      { number: '118', type: 'coat', color: '#f4b027', photo: '/assets/item2.jpg' },
+      { number: '128', type: 'coat', color: '#f4b027', photo: '/assets/item2.jpg' },
       { number: '66', type: 'coat', color: '#084c61', photo: '/assets/item3.jpg' },
     ]
   },
@@ -77,7 +77,7 @@ export const patrons = [
     id: 10,
     phone: 'XXX-X70-8253',
     tags: [
-      { number: '50', type: 'coat', color: '#084c61', photo: '/assets/item3.jpg' }
+      { number: '54', type: 'coat', color: '#084c61', photo: '/assets/item3.jpg' }
     ]
   },
 ]

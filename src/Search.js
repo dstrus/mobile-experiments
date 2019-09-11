@@ -14,13 +14,33 @@ function Search(props) {
   const onChange = ev => {
     const term = ev.target.value
     props.setSearchTerm(term)
+    search({ term })
+  }
+
+  const search = (constraints = {}) => {
+    const term = constraints.term === undefined ? props.term : constraints.term
+    const by = constraints.by || props.searchBy
 
     let results = []
     if (term.length > 0) {
-      results = patrons.filter(patron => patron.phone.replace(/\D/g,'').includes(term))
+      results = patrons.filter(patron => {
+        if (by === 'phone') {
+          return patron.phone.replace(/\D/g,'').includes(term)
+        } else if (by === 'tag') {
+          return patron.tags.findIndex(tag => tag.number.replace(/\D/g,'').includes(term)) > -1
+        } else {
+          return false
+        }
+      })
     }
 
     props.setSearchResults(results)
+  }
+
+  const searchBy = searchBy => {
+    props.setSearchBy(searchBy)
+    search({ by: searchBy })
+    document.querySelector('input.search').focus()
   }
 
   let searchPlaceholder = 'Search'
@@ -38,14 +58,14 @@ function Search(props) {
             <Segment
               first
               active={props.searchBy === 'phone'}
-              onClick={() => props.setSearchBy('phone')}
+              onClick={() => searchBy('phone')}
             >
               <FontAwesomeIcon icon={faPhoneAlt} />
             </Segment>
             <Segment
               last
               active={props.searchBy === 'tag'}
-              onClick={() => props.setSearchBy('tag')}
+              onClick={() => searchBy('tag')}
             >
               <FontAwesomeIcon icon={faTag} />
             </Segment>
@@ -55,6 +75,7 @@ function Search(props) {
             <FontAwesomeIcon icon={faSearch} className="search-icon" />
             <input
               autoFocus
+              className="search"
               type="tel"
               placeholder={searchPlaceholder}
               onChange={onChange}
