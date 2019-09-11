@@ -2,7 +2,8 @@ import {
   ADD_TO_QUEUE,
   RETURN_ALL_ITEMS,
   SET_SEARCH_RESULTS,
-  SET_SEARCH_TERM
+  SET_SEARCH_TERM,
+  SET_SEARCH_BY
 } from '../actions'
 
 export default function search(state = { results: [], term: '', by: 'phone' }, action) {
@@ -47,6 +48,11 @@ export default function search(state = { results: [], term: '', by: 'phone' }, a
       return {
         ...state,
         term: action.payload
+      }
+    case SET_SEARCH_BY:
+      return {
+        ...state,
+        by: action.payload
       }
     default:
       return state

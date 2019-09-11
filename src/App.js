@@ -28,13 +28,13 @@ class App extends Component {
             render={
               () => (
                 this.signedIn()
-                  ? <Redirect to="/search/phone" />
+                  ? <Redirect to="/search" />
                   : <SignIn />
               )
             }
           />
           <Route
-            path="/search/:by?"
+            path="/search"
             render={
               () => (
                 this.signedIn()
@@ -57,7 +57,7 @@ class App extends Component {
             render={
               () => (
                 this.signedIn()
-                  ? <Redirect to="/search/phone" />
+                  ? <Redirect to="/search" />
                   : <Redirect to="/sign-in" />
               )
             }

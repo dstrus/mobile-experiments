@@ -25,8 +25,8 @@ function Search(props) {
 
   let searchPlaceholder = 'Search'
 
-  if (props.match.params.by) {
-    searchPlaceholder += ` by ${props.match.params.by}`
+  if (props.searchBy) {
+    searchPlaceholder += ` by ${props.searchBy}`
   }
 
   return (
@@ -37,14 +37,15 @@ function Search(props) {
           <div>
             <Segment
               first
-              to="/search/phone"
+              active={props.searchBy === 'phone'}
+              onClick={() => props.setSearchBy('phone')}
             >
               <FontAwesomeIcon icon={faPhoneAlt} />
             </Segment>
             <Segment
               last
-              active={props.searchingByTag}
-              to="/search/tag"
+              active={props.searchBy === 'tag'}
+              onClick={() => props.setSearchBy('tag')}
             >
               <FontAwesomeIcon icon={faTag} />
             </Segment>

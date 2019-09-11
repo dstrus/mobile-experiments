@@ -4,6 +4,7 @@ export const ADD_TO_QUEUE = 'ADD_TO_QUEUE'
 export const RETURN_ALL_ITEMS = 'RETURN_ALL_ITEMS'
 export const SET_SEARCH_RESULTS = 'SET_SEARCH_RESULTS'
 export const SET_SEARCH_TERM = 'SET_SEARCH_TERM'
+export const SET_SEARCH_BY = 'SET_SEARCH_BY'
 
 export function signIn() {
   const uid = 1
@@ -46,5 +47,12 @@ export function setSearchTerm(term) {
   return {
     type: SET_SEARCH_TERM,
     payload: term
+  }
+}
+
+export function setSearchBy(by) {
+  return {
+    type: SET_SEARCH_BY,
+    payload: by
   }
 }
