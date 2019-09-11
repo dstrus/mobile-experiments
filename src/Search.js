@@ -84,7 +84,14 @@ function Search(props) {
           </div>
         </form>
 
-        <SearchResultList />
+        {
+          props.results.length === 0
+            ? <div className="blankSlate">
+                Type to begin searching.
+              </div>
+
+            : <SearchResultList />
+        }
       </div>
     </>
   )

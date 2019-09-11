@@ -6,7 +6,8 @@ import Search from '../Search'
 function mapStateToProps(state) {
   return {
     term: state.search.term,
-    searchBy: state.search.by
+    searchBy: state.search.by,
+    results: state.search.results
   }
 }
 

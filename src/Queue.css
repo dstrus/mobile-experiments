@@ -77,8 +77,10 @@
 }
 
 .blankSlate {
+  margin-top: 1rem;
+  background-color: white;
   width: 100%;
-  height: calc(80vh - 3rem);
+  height: calc(100vh - 48px - 6rem);
   display: flex;
   align-items: center;
   justify-content: center;
