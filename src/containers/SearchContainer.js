@@ -1,13 +1,20 @@
 import { connect } from 'react-redux'
 
-import { setSearchResults } from '../actions'
+import { setSearchResults, setSearchTerm } from '../actions'
 import Search from '../Search'
 
-function mapDispatchToProps(dispatch) {
+function mapStateToProps(state) {
   return {
-    setSearchResults: (patron) => dispatch(setSearchResults(patron))
+    term: state.search.term
   }
 }
 
-const SearchContainer = connect(null, mapDispatchToProps)(Search)
+function mapDispatchToProps(dispatch) {
+  return {
+    setSearchResults: (patron) => dispatch(setSearchResults(patron)),
+    setSearchTerm: (patron) => dispatch(setSearchTerm(patron))
+  }
+}
+
+const SearchContainer = connect(mapStateToProps, mapDispatchToProps)(Search)
 export default SearchContainer

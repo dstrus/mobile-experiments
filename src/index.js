@@ -13,7 +13,7 @@ const store = createStore(
   rootReducer,
   {
     queue: [],
-    search: { results: [] },
+    search: { results: [], term: '', by: 'phone' },
     auth: {},
   }
 )

@@ -1,6 +1,11 @@
-import { ADD_TO_QUEUE, RETURN_ALL_ITEMS, SET_SEARCH_RESULTS } from '../actions'
+import {
+  ADD_TO_QUEUE,
+  RETURN_ALL_ITEMS,
+  SET_SEARCH_RESULTS,
+  SET_SEARCH_TERM
+} from '../actions'
 
-export default function search(state = { results: [] }, action) {
+export default function search(state = { results: [], term: '', by: 'phone' }, action) {
   let i = 0
   let results = []
   switch(action.type) {
@@ -35,7 +40,13 @@ export default function search(state = { results: [] }, action) {
       }
     case SET_SEARCH_RESULTS:
       return {
+        ...state,
         results: action.payload
+      }
+    case SET_SEARCH_TERM:
+      return {
+        ...state,
+        term: action.payload
       }
     default:
       return state
