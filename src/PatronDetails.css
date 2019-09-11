@@ -15,7 +15,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
 }
 
 .PatronDetails h2 {
@@ -32,25 +33,27 @@
   padding: 0 10px;
 }
 
-.PatronDetails h4 {
-  font-size: 1rem;
+.PatronDetails .details h4 {
+  font-size: 0.9rem;
   letter-spacing: 1px;
   color: #252525;
+  margin-bottom: 1px;
 }
 
-.PatronDetails h5 {
-  font-size: 0.8rem;
+.PatronDetails .details h5 {
+  font-size: 0.7rem;
   letter-spacing: 1px;
   color: #252525;
-  padding-top: 3px;
+  margin-top: 8px;
 }
 
 .PatronDetails .details h6 {
   font-size: 0.7rem;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   font-weight: 600;
   color: #777c80;
   margin-top: 0px;
+  margin-bottom: 2px;
 }
 
 .PatronDetails h4, .PatronDetails h5, .PatronDetails h6 {
@@ -60,4 +63,5 @@
 .PatronDetails .itemList {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
