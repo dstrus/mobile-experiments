@@ -29,7 +29,7 @@ function Queue(props) {
       {
         props.queue.length === 0
           ? <div className="blankSlate">
-              <span role="img" aria-label="">🎉</span> The queue is empty! <span role="img" aria-label="">🎉</span>
+              <span role="img" aria-label="">🎉</span>&nbsp;The queue is empty!&nbsp;<span role="img" aria-label="">🎉</span>
             </div>
 
           : <div className="listContainer">
@@ -39,8 +39,8 @@ function Queue(props) {
                 disabledWhen='isReturned'
                 actionLabel='RETURN'
                 action={props.returnAllItems}
+                blankMessage="Select items from below to add to My Items."
               />
-              {/* <p>Select items from below to add to my items.</p> */}
 
               <h2>All Items ({props.queue.length})</h2>
               <QueueItemList
@@ -48,6 +48,7 @@ function Queue(props) {
                 disabledWhen='isSelected'
                 actionLabel='SELECT'
                 action={props.selectPatron}
+                blankMessage="The queue is empty!"
               />
             </div>
       }

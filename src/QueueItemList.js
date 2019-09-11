@@ -3,7 +3,7 @@ import React from 'react'
 import QueueItem from './QueueItem'
 import './QueueItemList.css'
 
-function QueueItemList({ patrons, ...props }) {
+function QueueItemList({ patrons, blankMessage, ...props }) {
   return (
     <div className="QueueItemList">
       {
@@ -19,7 +19,7 @@ function QueueItemList({ patrons, ...props }) {
       }
       {
         patrons.length === 0 && (
-          <p>There are no items in this list.</p>
+          <p>{blankMessage}</p>
         )
       }
     </div>
