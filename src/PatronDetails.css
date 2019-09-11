@@ -1,0 +1,63 @@
+.PatronDetails .detailHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.PatronDetails .detailHeader button, .PatronDetails .detailHeader button.backArrow {
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  color: #ccc;
+}
+
+.PatronDetails .patronDetailsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.PatronDetails h2 {
+  color: #777c80;
+  text-align: center;
+}
+
+.PatronDetails img.patron {
+  width: 85px;
+}
+
+.PatronDetails .patronDetailsContainer .details {
+  display: block;
+  padding: 0 10px;
+}
+
+.PatronDetails h4 {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: #252525;
+}
+
+.PatronDetails h5 {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: #252525;
+  padding-top: 3px;
+}
+
+.PatronDetails .details h6 {
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: #777c80;
+  margin-top: 0px;
+}
+
+.PatronDetails h4, .PatronDetails h5, .PatronDetails h6 {
+  margin: 4px;
+}
+
+.PatronDetails .itemList {
+  display: flex;
+  justify-content: center;
+}

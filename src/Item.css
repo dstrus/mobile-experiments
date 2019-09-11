@@ -1,0 +1,21 @@
+.Item {
+  padding: 8px;
+}
+
+.Item img {
+  width: 90px;
+  height: 100px;
+  border-radius: 2px;
+}
+
+.Item .tagNumber {
+  border-radius: 2px;
+}
+
+.Item .tagNumber h2 {
+  color: white;
+  font-size: 1.3rem;
+  margin: 0;
+  padding: 2px;
+  letter-spacing: 1px;
+}
