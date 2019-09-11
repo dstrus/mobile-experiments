@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Route, Redirect, Switch } from 'react-router-dom'
 
 import Search from './containers/SearchContainer'
 import Queue from './containers/QueueContainer'
 import SignIn from './containers/SignInContainer'
+import PatronDetails from './PatronDetails'
 
-import './App.css';
+import './App.css'
 
 class App extends Component {
 
@@ -54,6 +55,16 @@ class App extends Component {
             }
           />
           <Route
+            path="/patrons/:id"
+            render={
+              () => (
+                this.signedIn()
+                  ? <PatronDetails />
+                  : <Redirect to="/sign-in" />
+              )
+            }
+          />
+          <Route
             render={
               () => (
                 this.signedIn()
@@ -68,4 +79,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App

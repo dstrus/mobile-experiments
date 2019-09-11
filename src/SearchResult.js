@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faSpinner } from '@fortawesome/free-solid-svg-icons'
 
@@ -16,6 +17,11 @@ class SearchResult extends Component {
   onClick = () => {
     this.setState({ loading: true })
     this.cloneImage()
+  }
+
+
+  goToDetails = () => {
+    this.props.history.push(`/patrons/${this.props.patron.id}`)
   }
 
   cloneImage = () => {
@@ -60,6 +66,7 @@ class SearchResult extends Component {
             src={`/assets/${patron.id}.jpg`}
             alt={patron.phone}
             ref={this.imgRef}
+            onClick={this.goToDetails}
           />
         </div>
 
@@ -90,4 +97,4 @@ class SearchResult extends Component {
   }
 }
 
-export default SearchResult
+export default withRouter(SearchResult)
