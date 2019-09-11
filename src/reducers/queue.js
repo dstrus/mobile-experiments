@@ -5,10 +5,13 @@ function queue(state = [], action) {
   let i = -1
   switch(action.type) {
     case ADD_TO_QUEUE:
-      return [
-        ...state,
-        action.payload,
-      ]
+      patrons = [...state]
+      i = patrons.findIndex(patron => patron.id === action.payload.id)
+      if (i > -1) {
+        return state
+      } else {
+        return [...state, action.payload]
+      }
     case RETURN_ALL_ITEMS:
       patrons = [...state]
       i = patrons.findIndex(patron => patron.id === action.payload.id)
