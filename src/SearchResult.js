@@ -55,6 +55,42 @@ class SearchResult extends Component {
     )
   }
 
+  phoneSpan = () => {
+    const phone = this.props.patron.phone
+    const term = this.props.term
+
+    if (this.props.searchBy !== 'phone') {
+      return phone
+    }
+
+    return this.highlight(term, phone)
+  }
+
+  tagSpan = () => {
+    const tags = this.props.patron.tags.map(tag => tag.number).join(', ')
+    const term = this.props.term
+
+    if (this.props.searchBy !== 'tag') {
+      return tags
+    }
+
+    return this.highlight(term, tags)
+  }
+
+  highlight = (needle, haystack) => {
+    const i = haystack.indexOf(needle)
+
+    if (i === -1) {
+      return haystack
+    }
+
+    const first = haystack.substr(0, i)
+    const middle = haystack.substr(i, needle.length)
+    const last = haystack.substr(i + needle.length)
+
+    return <span>{first}<strong className="highlight">{middle}</strong>{last}</span>
+  }
+
   render() {
     const { patron } = this.props
 
@@ -71,7 +107,8 @@ class SearchResult extends Component {
         </div>
 
         <div>
-          <div className="phone">{patron.phone}</div>
+          <div className="phone">{this.phoneSpan()}</div>
+          <div className="tags">{this.tagSpan()}</div>
           <p>KIOSK A</p>
         </div>
 

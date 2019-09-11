@@ -4,9 +4,8 @@ import { withRouter } from 'react-router-dom'
 import { patrons } from './lib/patrons'
 
 function PatronDetails(props) {
-  const patron = {}
-  // const patron = patrons.find(patron => patron.id === props.match.params.id)
-  
+  const patron = patrons.find(patron => patron.id.toString() === props.match.params.id)
+
   return (
     <div className="PatronDetails">
       <h2>Details</h2>

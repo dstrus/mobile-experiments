@@ -9,6 +9,10 @@
   transition: .5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }
 
+.highlight {
+  background-color: #ff0;
+}
+
 .SearchResult .hidden {
   display: none;
 }
@@ -39,8 +43,9 @@ img.clone.animated {
   padding: 4px 0px;
 }
 
-.SearchResult small {
-  font-size: 10px;
+.SearchResult .tags {
+  color: #777c80;
+  font-size: 12px;
 }
 
 .SearchResult p {
