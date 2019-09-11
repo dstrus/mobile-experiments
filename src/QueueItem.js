@@ -38,11 +38,11 @@ function QueueItem(props) {
       </div>
 
       <div>
-        <button onClick={() => props.selectPatron(patron)} disabled={patron.isSelected}>
+        <button onClick={() => props.action(patron)} disabled={patron[props.disabledWhen]}>
           {
-            patron.isSelected
+            patron[props.disabledWhen]
               ? <FontAwesomeIcon icon={faCheck} />
-              : 'SELECT'
+              : props.actionLabel
           }
         </button>
         <p>KIOSK A</p>

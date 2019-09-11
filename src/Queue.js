@@ -32,9 +32,21 @@ function Queue(props) {
 
           : <div className="listContainer">
               <h2>My Items (0)</h2>
-              <p>Select items from below to add to my items.</p>
+              <QueueItemList
+                patrons={props.queue.filter(patron => patron.isSelected)}
+                disabledWhen='isReturned'
+                actionLabel='RETURN'
+                action={props.returnAllItems}
+              />
+              {/* <p>Select items from below to add to my items.</p> */}
+
               <h2>All Items ({props.queue.length})</h2>
-              <QueueItemList patrons={props.queue} />
+              <QueueItemList
+                patrons={props.queue}
+                disabledWhen='isSelected'
+                actionLabel='SELECT'
+                action={props.selectPatron}
+              />
             </div>
       }
 
