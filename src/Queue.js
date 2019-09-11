@@ -7,6 +7,8 @@ import Header from './containers/HeaderContainer'
 import './Queue.css'
 
 function Queue(props) {
+  const myItems = props.queue.filter(patron => patron.isSelected)
+
   return (
     <div className="Queue">
       <Header />
@@ -31,9 +33,9 @@ function Queue(props) {
             </div>
 
           : <div className="listContainer">
-              <h2>My Items (0)</h2>
+              <h2>My Items ({myItems.length})</h2>
               <QueueItemList
-                patrons={props.queue.filter(patron => patron.isSelected)}
+                patrons={myItems}
                 disabledWhen='isReturned'
                 actionLabel='RETURN'
                 action={props.returnAllItems}
