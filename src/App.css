@@ -13,3 +13,38 @@ body {
 button {
   outline: none;
 }
+
+.blue {
+  color: white;
+  background-color: #084c61;
+}
+
+.gold {
+  color: black;
+  background-color: #f4b027;
+}
+
+.grey {
+  color: white;
+  background-color: #777c80;
+}
+
+.green {
+  color: white;
+  background-color: #68a21d;
+}
+
+.orange {
+  color: white;
+  background-color: #e56000;
+}
+
+.white {
+  color: black;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+}
+
+.red {
+  color: white;
+}

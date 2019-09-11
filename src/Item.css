@@ -13,9 +13,12 @@
 }
 
 .Item .tagNumber h2 {
-  color: white;
   font-size: 1.3rem;
   margin: 0;
   padding: 2px;
   letter-spacing: 1px;
+}
+
+.Item .tagNumber h2.white {
+  padding: 1px;
 }
