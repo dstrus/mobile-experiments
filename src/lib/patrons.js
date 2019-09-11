@@ -3,7 +3,7 @@ export const patrons = [
     id: 1,
     phone: 'XXX-X12-7609',
     tags: [
-      { number: '37', type: 'bag', color: '#084c61', photo: '/assets/item1.jpg' },
+      { number: '37', type: 'bag', color: '#fff', photo: '/assets/item1.jpg' },
       { number: '67', type: 'coat', color: '#f4b027', photo: '/assets/item2.jpg' }
     ]
   },
