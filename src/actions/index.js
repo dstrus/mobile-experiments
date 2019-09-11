@@ -1,6 +1,7 @@
 export const SIGN_IN = 'SIGN_IN'
 export const SIGN_OUT = 'SIGN_OUT'
 export const ADD_TO_QUEUE = 'ADD_TO_QUEUE'
+export const SELECT_PATRON = 'SELECT_PATRON'
 export const RETURN_ALL_ITEMS = 'RETURN_ALL_ITEMS'
 export const SET_SEARCH_RESULTS = 'SET_SEARCH_RESULTS'
 export const SET_SEARCH_TERM = 'SET_SEARCH_TERM'
@@ -25,6 +26,13 @@ export function signOut() {
 export function addToQueue(patron) {
   return {
     type: ADD_TO_QUEUE,
+    payload: patron
+  }
+}
+
+export function selectPatron(patron) {
+  return {
+    type: SELECT_PATRON,
     payload: patron
   }
 }

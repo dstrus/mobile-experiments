@@ -1,11 +1,12 @@
 import { connect } from 'react-redux'
 
-import { returnAllItems } from '../actions'
+import { returnAllItems, selectPatron } from '../actions'
 import QueueItem from '../QueueItem'
 
 function mapDispatchToProps(dispatch) {
   return {
-    returnAllItems: (patron) => dispatch(returnAllItems(patron))
+    returnAllItems: (patron) => dispatch(returnAllItems(patron)),
+    selectPatron: (patron) => dispatch(selectPatron(patron))
   }
 }
 

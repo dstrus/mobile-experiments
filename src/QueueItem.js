@@ -1,4 +1,6 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheck } from '@fortawesome/free-solid-svg-icons'
 
 import './QueueItem.css'
 
@@ -36,8 +38,12 @@ function QueueItem(props) {
       </div>
 
       <div>
-        <button onClick={() => props.returnAllItems(patron)}>
-          SELECT
+        <button onClick={() => props.selectPatron(patron)} disabled={patron.isSelected}>
+          {
+            patron.isSelected
+              ? <FontAwesomeIcon icon={faCheck} />
+              : 'SELECT'
+          }
         </button>
         <p>KIOSK A</p>
       </div>
