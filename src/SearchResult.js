@@ -67,14 +67,16 @@ class SearchResult extends Component {
   }
 
   tagSpan = () => {
-    const tags = this.props.patron.tags.map(tag => tag.number).join(', ')
+    const tags = this.props.patron.tags.map(tag => tag.number).join(' ')
     const term = this.props.term
 
-    if (this.props.searchBy !== 'tag') {
-      return tags
+    if (this.props.searchBy !== 'tag' || tags.indexOf(term) === -1) {
+      return this.props.patron.tags.map(tag => <span className={`tag ${tag.color}`}>{tag.number}</span>)
     }
 
-    return this.highlight(term, tags)
+    return this.props.patron.tags.map(tag => (
+      <span className={`tag ${tag.color}`}>{this.highlight(term, tag.number)}</span>
+    ))
   }
 
   highlight = (needle, haystack) => {
@@ -106,10 +108,10 @@ class SearchResult extends Component {
           />
         </div>
 
-        <div>
+        <div className="details">
           <div className="phone">{this.phoneSpan()}</div>
-          <div className="tags">{this.tagSpan()}</div>
           <p>KIOSK A</p>
+          <div className="tags">{this.tagSpan()}</div>
         </div>
 
         <button onClick={this.onClick} disabled={patron.isQueued || this.state.loading}>

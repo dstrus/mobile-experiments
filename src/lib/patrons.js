@@ -3,7 +3,7 @@ export const patrons = [
     id: 1,
     phone: 'XXX-X12-7609',
     tags: [
-      { number: '37', type: 'bag', color: 'white', photo: '/assets/item1.jpg' },
+      { number: 'A-8888', type: 'bag', color: 'white', photo: '/assets/item1.jpg' },
       { number: '67', type: 'coat', color: 'gold', photo: '/assets/item2.jpg' }
     ]
   },
@@ -11,7 +11,7 @@ export const patrons = [
     id: 2,
     phone: 'XXX-X61-1234',
     tags: [
-      { number: '168', type: 'coat', color: 'blue', photo: '/assets/item3.jpg' },
+      { number: 'A-168', type: 'coat', color: 'blue', photo: '/assets/item3.jpg' },
       { number: '59', type: 'coat', color: 'green', photo: '/assets/item4.jpg' },
       { number: '38', type: 'bag', color: 'gold', photo: '/assets/item5.jpg' },
     ]
