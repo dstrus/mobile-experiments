@@ -9,7 +9,8 @@ import './PatronDetails.css'
 
 function PatronDetails(props) {
   const patron = patrons.find(patron => patron.id.toString() === props.match.params.id)
-  
+  const patronIsInQueue = props.queue.find(queuedPatron => queuedPatron === patron)
+
   return (
     <div className="PatronDetails">
       <div>
@@ -41,14 +42,14 @@ function PatronDetails(props) {
         <div className="itemList">
           { 
             patron.tags.map(tag => (
-              <Item tag={tag} />
+              <Item enqueued={patronIsInQueue} tag={tag} />
             ))
           }
         </div>
       </div>
       <div className="footer">
-        <button>Return Items</button>
-        <button>Return Items</button>
+        <button>{patronIsInQueue ? 'return all' : 'return all'}</button>
+        <button>{patronIsInQueue ? 'select all' : 'queue all'}</button>
       </div>
     </div>
   )

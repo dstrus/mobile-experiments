@@ -4,7 +4,7 @@ import { Route, Redirect, Switch } from 'react-router-dom'
 import Search from './containers/SearchContainer'
 import Queue from './containers/QueueContainer'
 import SignIn from './containers/SignInContainer'
-import PatronDetails from './PatronDetails'
+import PatronDetails from './containers/PatronDetailsContainer'
 
 import './App.css'
 

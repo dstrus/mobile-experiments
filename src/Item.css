@@ -1,5 +1,13 @@
 .Item {
   padding: 8px;
+  position: relative;
+}
+
+.Item .check {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: green;
 }
 
 .Item img {
