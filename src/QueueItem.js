@@ -6,6 +6,18 @@ import './QueueItem.css'
 
 function QueueItem(props) {
   const { patron } = props
+
+  const renderReturnButton = () => {
+    return (
+      <div>
+        <button onClick={() => props.action(props.patron)} disabled={props.patron[props.disabledWhen]}>
+          {props.actionLabel}
+        </button>
+        <p>KIOSK A</p>
+      </div>
+    )
+  }
+
   return (
     <div className="QueueItem">
       <div className="imgContainer">
@@ -37,16 +49,11 @@ function QueueItem(props) {
 
       </div>
 
-      <div>
-        <button onClick={() => props.action(patron)} disabled={patron[props.disabledWhen]}>
-          {
-            patron[props.disabledWhen]
-              ? <FontAwesomeIcon icon={faCheck} />
-              : props.actionLabel
-          }
-        </button>
-        <p>KIOSK A</p>
-      </div>
+      {
+        patron[props.disabledWhen]
+          ? <div className="check"><FontAwesomeIcon icon={faCheck} /></div>
+          : renderReturnButton()
+      }
     </div>
   )
 }

@@ -63,6 +63,13 @@ img.tag {
   margin-bottom: 0;
 }
 
+.QueueItem .check {
+  width: 4rem;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #68a21d;
+}
+
 .QueueItem button {
   color: white;
   background-color: #777c80;
