@@ -93,6 +93,24 @@ class SearchResult extends Component {
     return <span>{first}<strong className="highlight">{middle}</strong>{last}</span>
   }
 
+  renderQueueButton = () => {
+    const { patron } = this.props
+
+    return (
+      <button onClick={this.onClick} disabled={patron.isQueued || this.state.loading}>
+        {
+          this.state.loading && (
+            <FontAwesomeIcon icon={faSpinner} className="rotating" />
+          )
+        }
+
+        {
+          !this.state.loading && !patron.isQueued && 'QUEUE'
+        }
+      </button>
+    )
+  }
+
   render() {
     const { patron } = this.props
 
@@ -114,23 +132,13 @@ class SearchResult extends Component {
           <div className="tags">{this.tagSpan()}</div>
         </div>
 
-        <button onClick={this.onClick} disabled={patron.isQueued || this.state.loading}>
-          {
-            this.state.loading && (
-              <FontAwesomeIcon icon={faSpinner} className="rotating" />
-            )
-          }
+        {
+          !this.state.loading && patron.isQueued
+            ? <div className="check"><FontAwesomeIcon icon={faCheck} /></div>
+            : this.renderQueueButton()
+        }
 
-          {
-            !this.state.loading && patron.isQueued && (
-              <FontAwesomeIcon icon={faCheck} />
-            )
-          }
 
-          {
-            !this.state.loading && !patron.isQueued && 'QUEUE'
-          }
-        </button>
       </div>
     )
   }

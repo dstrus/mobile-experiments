@@ -82,6 +82,13 @@ img.clone.animated {
   padding: 0 0 4px 0px;
 }
 
+.SearchResult .check {
+  width: 5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #68a21d;
+}
+
 .SearchResult button {
   position: relative;
   color: white;
