@@ -4,7 +4,7 @@
   justify-content: space-between;
   height: calc(100vh - 40px - 5rem);
 }
-  
+
 .PatronDetails .detailHeader {
   display: flex;
   justify-content: space-between;
@@ -71,6 +71,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  max-width: 318px;
+  margin: 0 auto;
 }
 
 .PatronDetails .footer button {
