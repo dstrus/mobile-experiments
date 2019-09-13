@@ -1,18 +1,27 @@
 .Item {
-  padding: 8px;
+  margin: 0 9px;
   position: relative;
 }
 
 .Item .check {
+  color: white;
+  font-size: 1.25rem;
+}
+
+.Item .check svg {
+  background-color: green;
+  border-radius: 50%;
   position: absolute;
-  top: 0;
+  top: 35px;
+  left: 0;
   right: 0;
-  color: green;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2px 5px;
 }
 
 .Item img {
-  width: 90px;
-  height: 100px;
+  width: 85px;
   border-radius: 2px;
 }
 
