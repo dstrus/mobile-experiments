@@ -1,4 +1,5 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 
@@ -18,6 +19,10 @@ function QueueItem(props) {
     )
   }
 
+  const goToDetails = () => {
+    props.history.push(`/patrons/${patron.id}`)
+  }
+
   return (
     <div className="QueueItem">
       <div className="imgContainer">
@@ -25,6 +30,7 @@ function QueueItem(props) {
           className="patron small"
           src={`/assets/${patron.id}.jpg`}
           alt={patron.phone}
+          onClick={goToDetails}
         />
         <div className="phone">{patron.phone}</div>
       </div>
@@ -58,4 +64,4 @@ function QueueItem(props) {
   )
 }
 
-export default QueueItem
+export default withRouter(QueueItem)
