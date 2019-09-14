@@ -1,17 +1,19 @@
-export const SIGN_IN = 'SIGN_IN'
-export const SIGN_OUT = 'SIGN_OUT'
-export const ADD_TO_QUEUE = 'ADD_TO_QUEUE'
-export const SELECT_PATRON = 'SELECT_PATRON'
-export const RETURN_ALL_ITEMS = 'RETURN_ALL_ITEMS'
-export const SET_SEARCH_RESULTS = 'SET_SEARCH_RESULTS'
-export const SET_SEARCH_TERM = 'SET_SEARCH_TERM'
-export const SET_SEARCH_BY = 'SET_SEARCH_BY'
+import {
+  SIGN_IN,
+  SIGN_OUT,
+  ADD_TO_QUEUE,
+  SELECT_PATRON,
+  RETURN_ALL_ITEMS,
+  SET_SEARCH_RESULTS,
+  SET_SEARCH_TERM,
+  SET_SEARCH_BY
+} from './constants.js'
 
 export function signIn() {
   const uid = 1
   window.localStorage.setItem('uid', uid)
   return {
-    type: 'SIGN_IN',
+    type: SIGN_IN,
     payload: uid
   }
 }
@@ -19,7 +21,7 @@ export function signIn() {
 export function signOut() {
   window.localStorage.removeItem('uid')
   return {
-    type: 'SIGN_OUT'
+    type: SIGN_OUT
   }
 }
 

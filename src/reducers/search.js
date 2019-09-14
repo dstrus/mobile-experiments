@@ -4,7 +4,7 @@ import {
   SET_SEARCH_RESULTS,
   SET_SEARCH_TERM,
   SET_SEARCH_BY
-} from '../actions'
+} from '../actions/constants'
 
 export default function search(state = { results: [], term: '', by: 'phone' }, action) {
   let i = 0

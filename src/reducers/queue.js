@@ -1,4 +1,8 @@
-import { ADD_TO_QUEUE, RETURN_ALL_ITEMS, SELECT_PATRON } from '../actions'
+import {
+  ADD_TO_QUEUE,
+  RETURN_ALL_ITEMS,
+  SELECT_PATRON
+} from '../actions/constants'
 
 function queue(state = [], action) {
   let patrons = []

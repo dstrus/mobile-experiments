@@ -1,4 +1,4 @@
-import { SIGN_IN, SIGN_OUT } from '../actions'
+import { SIGN_IN, SIGN_OUT } from '../actions/constants'
 
 function auth(state = {}, action) {
   switch(action.type) {
