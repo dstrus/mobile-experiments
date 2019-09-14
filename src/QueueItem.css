@@ -25,20 +25,26 @@
   align-items: center;
   justify-content: center;
   white-space: nowrap;
+  min-width: 50px;
 }
 
 .QueueItem img.patron,
 img.tag {
   width: 80px;
+  height: 80px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .QueueItem img.patron.small {
   width: 50px;
+  height: 50px;
+  object-fit: cover;
 }
 
 .QueueItem img.tag.small {
   width: 42px;
+  height: 42px;
   margin: 0;
   padding: 0;
 }

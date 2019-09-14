@@ -71,11 +71,11 @@ class SearchResult extends Component {
     const term = this.props.term
 
     if (this.props.searchBy !== 'tag' || tags.indexOf(term) === -1) {
-      return this.props.patron.tags.map(tag => <span className={`tag ${tag.color}`}>{tag.number}</span>)
+      return this.props.patron.tags.map(tag => <span key={tag.id} className={`tag ${tag.color}`}>{tag.number}</span>)
     }
 
     return this.props.patron.tags.map(tag => (
-      <span className={`tag ${tag.color}`}>{this.highlight(term, tag.number)}</span>
+      <span key={tag.id} className={`tag ${tag.color}`}>{this.highlight(term, tag.number)}</span>
     ))
   }
 
@@ -119,8 +119,8 @@ class SearchResult extends Component {
         <div className="imgContainer">
           <img
             className="patron"
-            src={`/assets/${patron.id}.jpg`}
-            alt={patron.phone}
+            src={patron.avatar}
+            alt=""
             ref={this.imgRef}
             onClick={this.goToDetails}
           />

@@ -20,7 +20,6 @@ const onMessage = (ws, store) => evt => {
   console.log("FROM RAILS: ", msg);
 
   const connectionState = store.getState().connection.state;
-  // const gameCode = store.getState().game.code;
 
   if (connectionState === 'OPENING') {
     if (msg.type === 'welcome') {
@@ -44,10 +43,6 @@ const onMessage = (ws, store) => evt => {
         identifier: JSON.stringify({
           channel: 'VenueChannel',
         }),
-        // data: JSON.stringify({
-        //   action: 'join',
-        //   code: gameCode,
-        // }),
       };
       socket.send(JSON.stringify(msg));
     } else {
@@ -71,7 +66,8 @@ export default store => next => action => {
       socket.close();
     }
 
-    const url = 'wss://chexology-rails-staging-pr-730.herokuapp.com/cable'
+    // const url = 'wss://chexology-rails-staging-pr-730.herokuapp.com/cable'
+    const url = 'ws://localhost:3000/cable'
     const { venue_uuid } = wsAction.payload;
 
     socket = new WebSocket(url);

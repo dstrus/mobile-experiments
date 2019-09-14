@@ -4,18 +4,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { withRouter } from 'react-router-dom'
 
 import Item from './Item'
-import { patrons } from './lib/patrons'
 import './PatronDetails.css'
 
 function PatronDetails(props) {
-  const patron = patrons.find(patron => patron.id.toString() === props.match.params.id)
+  const patron = props.patrons.find(patron => patron.id.toString() === props.match.params.id)
   const patronIsInQueue = props.queue.find(queuedPatron => queuedPatron === patron)
 
   return (
     <div className="PatronDetails">
       <div>
         <div className="detailHeader">
-          <button 
+          <button
             className="backArrow"
             onClick={() => props.history.goBack()}
           >
@@ -29,8 +28,8 @@ function PatronDetails(props) {
         <div className="patronDetailsContainer">
           <img
             className="patron"
-            src={`/assets/${patron.id}.jpg`}
-            alt={patron.phone}
+            src={patron.avatar}
+            alt=""
           />
           <div className="details">
             <h4>{patron.phone}</h4>
@@ -40,7 +39,7 @@ function PatronDetails(props) {
           </div>
         </div>
         <div className="itemList">
-          { 
+          {
             patron.tags.map(tag => (
               <Item enqueued={patronIsInQueue} tag={tag} />
             ))

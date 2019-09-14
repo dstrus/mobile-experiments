@@ -7,14 +7,17 @@ import App from '../App'
 
 function mapStateToProps(state) {
   return {
-    uid: state.auth.uid
+    uid: state.auth.uid,
+    connection: state.connection
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     signIn: () => dispatch(signIn()),
-    wsConnect: () => dispatch(connectionActions.wsConnect())
+    wsConnect: () => dispatch(connectionActions.wsConnect()),
+    wsSubscribe: () => dispatch(connectionActions.wsSubscribe()),
+    wsLoadPatrons: () => dispatch({ type: 'WS_GET_CHECKINS' })
   }
 }
 

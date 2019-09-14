@@ -16,7 +16,7 @@ button {
 
 .blue {
   color: white !important;
-  background-color: #084c61;
+  background-color: #166b8f;
 }
 
 .gold {
@@ -26,7 +26,7 @@ button {
 
 .grey {
   color: white !important;
-  background-color: #777c80;
+  background-color: #59595b;
 }
 
 .green {
@@ -47,5 +47,20 @@ button {
 
 .red {
   color: white !important;
-  background-color: #e81d56;
+  background-color: #ea1754;
+}
+
+.purple {
+  color: white !important;
+  background-color: #9333bb;
+}
+
+.maroon {
+  color: white !important;
+  background-color: #764168;
+}
+
+.black {
+  color: white !important;
+  background-color: #222;
 }

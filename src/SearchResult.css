@@ -20,9 +20,16 @@
   display: none;
 }
 
+.SearchResult .imgContainer {
+  width: 60px;
+  height: 60px;
+}
+
 img.patron {
   width: 60px;
+  height: 60px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 img.clone {

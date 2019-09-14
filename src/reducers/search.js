@@ -1,12 +1,13 @@
 import {
   ADD_TO_QUEUE,
   RETURN_ALL_ITEMS,
+  LOAD_PATRONS,
   SET_SEARCH_RESULTS,
   SET_SEARCH_TERM,
   SET_SEARCH_BY
 } from '../actions/constants'
 
-export default function search(state = { results: [], term: '', by: 'phone' }, action) {
+export default function search(state = { patrons: [], results: [], term: '', by: 'phone' }, action) {
   let i = 0
   let results = []
   switch(action.type) {
@@ -38,6 +39,11 @@ export default function search(state = { results: [], term: '', by: 'phone' }, a
       return {
         ...state,
         results
+      }
+    case LOAD_PATRONS:
+      return {
+        ...state,
+        patrons: action.payload
       }
     case SET_SEARCH_RESULTS:
       return {

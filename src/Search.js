@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhoneAlt, faTag, faSearch } from '@fortawesome/free-solid-svg-icons'
 
-import { patrons } from './lib/patrons'
 import Header from './containers/HeaderContainer'
 import Segment from './Segment'
 import SearchResultList from './containers/SearchResultListContainer'
@@ -23,7 +22,7 @@ function Search(props) {
 
     let results = []
     if (term.length > 0) {
-      results = patrons.filter(patron => {
+      results = props.patrons.filter(patron => {
         if (by === 'phone') {
           return patron.phone.replace(/\D/g,'').includes(term)
         } else if (by === 'tag') {

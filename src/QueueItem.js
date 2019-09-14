@@ -23,8 +23,8 @@ function QueueItem(props) {
       <div className="imgContainer">
         <img
           className="patron small"
-          src={`/assets/${patron.id}.jpg`}
-          alt={patron.phone}
+          src={patron.avatar}
+          alt=""
         />
         <div className="phone">{patron.phone}</div>
       </div>
@@ -38,7 +38,7 @@ function QueueItem(props) {
                   <img
                     className="tag small"
                     src={tag.photo}
-                    alt={patron.phone}
+                    alt=""
                   />
                   <div className="number">{tag.number}</div>
                 </div>

@@ -14,7 +14,7 @@ const store = createStore(
   rootReducer,
   {
     queue: [],
-    search: { results: [], term: '', by: 'phone' },
+    search: { patrons: [], results: [], term: '', by: 'phone' },
     auth: {},
     connection: { state: '' },
   },

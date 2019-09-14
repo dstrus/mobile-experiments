@@ -11,9 +11,22 @@ import './App.css'
 class App extends Component {
 
   componentDidMount() {
-    this.props.wsConnect()
+    if (this.props.connection.state === '') {
+      this.props.wsConnect()
+    }
     if (window.localStorage.getItem('uid')) {
       this.props.signIn()
+    }
+    window.localStorage.setItem('tested', false)
+  }
+
+  componentDidUpdate(preProps, prevState) {
+    if (window.localStorage.getItem('tested')) {
+      const status = this.props.connection.state
+      if (status === 'READY' ) {
+        this.props.wsLoadPatrons()
+      }
+      window.localStorage.setItem('tested', true)
     }
   }
 

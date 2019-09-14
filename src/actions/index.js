@@ -4,6 +4,7 @@ import {
   ADD_TO_QUEUE,
   SELECT_PATRON,
   RETURN_ALL_ITEMS,
+  LOAD_PATRONS,
   SET_SEARCH_RESULTS,
   SET_SEARCH_TERM,
   SET_SEARCH_BY
@@ -43,6 +44,13 @@ export function returnAllItems(patron) {
   return {
     type: RETURN_ALL_ITEMS,
     payload: patron
+  }
+}
+
+export function loadPatrons(patrons) {
+  return {
+    type: LOAD_PATRONS,
+    payload: patrons
   }
 }
 
