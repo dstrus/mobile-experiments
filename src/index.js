@@ -1,11 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route } from 'react-router-dom'
 
 import rootReducer from './reducers'
+import websocket from './middlewares/websocket'
 import App from './containers/AppContainer'
 import * as serviceWorker from './serviceWorker'
 
@@ -15,7 +16,9 @@ const store = createStore(
     queue: [],
     search: { results: [], term: '', by: 'phone' },
     auth: {},
-  }
+    connection: { state: '' },
+  },
+  applyMiddleware(websocket)
 )
 
 ReactDOM.render(

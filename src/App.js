@@ -11,6 +11,7 @@ import './App.css'
 class App extends Component {
 
   componentDidMount() {
+    this.props.wsConnect()
     if (window.localStorage.getItem('uid')) {
       this.props.signIn()
     }
