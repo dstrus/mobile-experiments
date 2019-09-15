@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheck, faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { faCheck, faSpinner, faUser } from '@fortawesome/free-solid-svg-icons'
 
 import './SearchResult.css'
 
@@ -19,6 +19,15 @@ class SearchResult extends Component {
     this.cloneImage()
   }
 
+  onError = () => {
+    const img = this.imgRef.current
+    const container = img.parentElement
+    const icon = container.querySelector('svg')
+
+    img.classList.add('hidden')
+    icon.classList.remove('hidden')
+    container.classList.add('iconShowing')
+  }
 
   goToDetails = () => {
     this.props.history.push(`/patrons/${this.props.patron.id}`)
@@ -123,7 +132,9 @@ class SearchResult extends Component {
             alt=""
             ref={this.imgRef}
             onClick={this.goToDetails}
+            onError={this.onError}
           />
+          <FontAwesomeIcon icon={faUser} className="hidden" />
         </div>
 
         <div className="details">

@@ -11,7 +11,6 @@
 
 .highlight {
   color: black;
-  /* text-shadow: 0 0 3px #ff0; */
   background-color: #ffff00cc;
   box-shadow: 0 0 8px 0 #ff0;
 }
@@ -22,6 +21,17 @@
 
 .SearchResult .imgContainer {
   width: 60px;
+  height: 60px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.SearchResult .imgContainer.iconShowing {
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.SearchResult svg {
   height: 60px;
 }
 
