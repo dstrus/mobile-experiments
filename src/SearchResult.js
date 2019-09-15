@@ -125,19 +125,24 @@ class SearchResult extends Component {
 
     return (
       <div className="SearchResult">
-        <div className="imgContainer">
+        <div
+          className="imgContainer"
+          onClick={this.goToDetails}
+        >
           <img
             className="patron"
             src={patron.avatar}
             alt=""
             ref={this.imgRef}
-            onClick={this.goToDetails}
             onError={this.onError}
           />
           <FontAwesomeIcon icon={faUser} className="hidden" />
         </div>
 
-        <div className="details">
+        <div
+          className="details"
+          onClick={this.goToDetails}
+        >
           <div className="phone">{this.phoneSpan()}</div>
           <p>KIOSK A</p>
           <div className="tags">{this.tagSpan()}</div>
