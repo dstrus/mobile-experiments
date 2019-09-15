@@ -28,6 +28,11 @@
   min-width: 50px;
 }
 
+.QueueItem .imgContainer svg {
+  height: 50px;
+  width: 30px;
+}
+
 .QueueItem img.patron,
 img.tag {
   width: 80px;

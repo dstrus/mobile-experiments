@@ -1,11 +1,21 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheck } from '@fortawesome/free-solid-svg-icons'
+import { faCheck, faUser } from '@fortawesome/free-solid-svg-icons'
 
 import './QueueItem.css'
 
 function QueueItem(props) {
   const { patron } = props
+
+  const onError = ev => {
+    const img = ev.target
+    const container = img.parentElement
+    const icon = container.querySelector('svg')
+
+    img.classList.add('hidden')
+    icon.classList.remove('hidden')
+    container.classList.add('iconShowing')
+  }
 
   const renderReturnButton = () => {
     return (
@@ -25,7 +35,9 @@ function QueueItem(props) {
           className="patron small"
           src={patron.avatar}
           alt=""
+          onError={onError}
         />
+        <FontAwesomeIcon icon={faUser} className="hidden" />
         <div className="phone">{patron.phone}</div>
       </div>
 
