@@ -41,7 +41,7 @@ function PatronDetails(props) {
         <div className="itemList">
           {
             patron.tags.map(tag => (
-              <Item enqueued={patronIsInQueue} tag={tag} />
+              <Item enqueued={patronIsInQueue} tag={tag} key={tag.id} />
             ))
           }
         </div>
