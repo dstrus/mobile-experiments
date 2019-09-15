@@ -1,5 +1,5 @@
 import React from 'react'
-import { faArrowLeft, faEllipsisH } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft, faEllipsisH, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { withRouter } from 'react-router-dom'
 
@@ -9,6 +9,16 @@ import './PatronDetails.css'
 function PatronDetails(props) {
   const patron = props.patrons.find(patron => patron.id.toString() === props.match.params.id)
   const patronIsInQueue = props.queue.find(queuedPatron => queuedPatron === patron)
+
+  const onError = ev => {
+    const img = ev.target
+    const container = img.parentElement
+    const icon = container.querySelector('svg')
+
+    img.classList.add('hidden')
+    icon.classList.remove('hidden')
+    container.classList.add('iconShowing')
+  }
 
   return (
     <div className="PatronDetails">
@@ -30,7 +40,9 @@ function PatronDetails(props) {
             className="patron"
             src={patron.avatar}
             alt=""
+            onError={onError}
           />
+          <FontAwesomeIcon icon={faUser} className="hidden" />
           <div className="details">
             <h4>{patron.phone}</h4>
             <h6>Arrival: 10/04/19 @12:30pm</h6>
