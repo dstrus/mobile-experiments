@@ -20,13 +20,11 @@ class App extends Component {
     window.localStorage.setItem('tested', false)
   }
 
-  componentDidUpdate(preProps, prevState) {
-    if (window.localStorage.getItem('tested')) {
-      const status = this.props.connection.state
-      if (status === 'READY' ) {
-        this.props.wsLoadPatrons()
-      }
-      window.localStorage.setItem('tested', true)
+  componentDidUpdate(prevProps, prevState) {
+    const prevStatus = prevProps.connection.state
+    const status = this.props.connection.state
+    if (status === 'READY' && prevStatus !== 'READY') {
+      this.props.wsLoadPatrons()
     }
   }
 
