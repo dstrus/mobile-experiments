@@ -5,6 +5,7 @@ import {
   WS_CONNECT,
   WS_SUBSCRIBE,
   WS_GET_INITIAL_DATA,
+  WS_ADD_TO_QUEUE,
 } from './constants';
 
 export function opening() {
@@ -41,5 +42,15 @@ export function wsSubscribe() {
 export function wsGetInitialData() {
   return {
     type: WS_GET_INITIAL_DATA,
+  }
+}
+
+export function wsAddToQueue(patron) {
+  return {
+    type: WS_ADD_TO_QUEUE,
+    payload: {
+      patron_id: patron.id,
+      item_ids: patron.tags.map(tag => tag.id)
+    }
   }
 }

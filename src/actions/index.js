@@ -1,7 +1,6 @@
 import {
   SIGN_IN,
   SIGN_OUT,
-  ADD_TO_QUEUE,
   SELECT_PATRON,
   RETURN_ALL_ITEMS,
   LOAD_PATRONS,
@@ -23,13 +22,6 @@ export function signOut() {
   window.localStorage.removeItem('uid')
   return {
     type: SIGN_OUT
-  }
-}
-
-export function addToQueue(patron) {
-  return {
-    type: ADD_TO_QUEUE,
-    payload: patron
   }
 }
 

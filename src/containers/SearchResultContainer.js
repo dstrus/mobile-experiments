@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { addToQueue } from '../actions'
+import { wsAddToQueue } from '../actions/connection'
 import SearchResult from '../SearchResult'
 
 function mapStateToProps(state) {
@@ -12,7 +12,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    addToQueue: (patron) => dispatch(addToQueue(patron))
+    wsAddToQueue: (patron) => dispatch(wsAddToQueue(patron))
   }
 }
 
