@@ -30,7 +30,7 @@ class SearchResult extends Component {
   }
 
   goToDetails = () => {
-    this.props.history.push(`/patrons/${this.props.patron.id}`)
+    this.props.history.push(`/checkins/${this.props.checkin.id}`)
   }
 
   cloneImage = () => {
@@ -57,7 +57,7 @@ class SearchResult extends Component {
     window.setTimeout(
       () => {
         newImg.classList.add('hidden')
-        this.props.addToQueue(this.props.patron)
+        this.props.addToQueue(this.props.checkin)
         this.setState({ loading: false })
       },
       600
@@ -65,7 +65,7 @@ class SearchResult extends Component {
   }
 
   phoneSpan = () => {
-    const phone = this.props.patron.phone
+    const phone = this.props.checkin.phone
     const term = this.props.term
 
     if (this.props.searchBy !== 'phone') {
@@ -76,14 +76,14 @@ class SearchResult extends Component {
   }
 
   tagSpan = () => {
-    const tags = this.props.patron.tags.map(tag => tag.number).join(' ')
+    const tags = this.props.checkin.tags.map(tag => tag.number).join(' ')
     const term = this.props.term
 
     if (this.props.searchBy !== 'tag' || tags.indexOf(term) === -1) {
-      return this.props.patron.tags.map(tag => <span key={tag.id} className={`tag ${tag.color}`}>{tag.number}</span>)
+      return this.props.checkin.tags.map(tag => <span key={tag.id} className={`tag ${tag.color}`}>{tag.number}</span>)
     }
 
-    return this.props.patron.tags.map(tag => (
+    return this.props.checkin.tags.map(tag => (
       <span key={tag.id} className={`tag ${tag.color}`}>{this.highlight(term, tag.number)}</span>
     ))
   }
@@ -103,10 +103,10 @@ class SearchResult extends Component {
   }
 
   renderQueueButton = () => {
-    const { patron } = this.props
+    const { checkin } = this.props
 
     return (
-      <button onClick={this.onClick} disabled={patron.isQueued || this.state.loading}>
+      <button onClick={this.onClick} disabled={checkin.isQueued || this.state.loading}>
         {
           this.state.loading && (
             <FontAwesomeIcon icon={faSpinner} className="rotating" />
@@ -114,14 +114,14 @@ class SearchResult extends Component {
         }
 
         {
-          !this.state.loading && !patron.isQueued && 'QUEUE'
+          !this.state.loading && !checkin.isQueued && 'QUEUE'
         }
       </button>
     )
   }
 
   render() {
-    const { patron } = this.props
+    const { checkin } = this.props
 
     return (
       <div className="SearchResult">
@@ -130,8 +130,8 @@ class SearchResult extends Component {
           onClick={this.goToDetails}
         >
           <img
-            className="patron"
-            src={patron.avatar}
+            className="checkin"
+            src={checkin.avatar}
             alt=""
             ref={this.imgRef}
             onError={this.onError}
@@ -149,7 +149,7 @@ class SearchResult extends Component {
         </div>
 
         {
-          !this.state.loading && patron.isQueued
+          !this.state.loading && checkin.isQueued
             ? <div className="check"><FontAwesomeIcon icon={faCheck} /></div>
             : this.renderQueueButton()
         }

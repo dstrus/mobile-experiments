@@ -9,10 +9,10 @@ function SearchResultList(props) {
     <div className="SearchResultList">
       {
         props.searchResults.map(
-          patron => (
+          checkin => (
             <SearchResult
-              patron={patron}
-              key={patron.id}
+              checkin={checkin}
+              key={checkin.id}
               addToQueue={props.addToQueue}
             />
           )

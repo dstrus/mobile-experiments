@@ -17,7 +17,7 @@ function mapDispatchToProps(dispatch) {
     signIn: () => dispatch(signIn()),
     wsConnect: () => dispatch(connectionActions.wsConnect()),
     wsSubscribe: () => dispatch(connectionActions.wsSubscribe()),
-    wsLoadPatrons: () => dispatch({ type: 'WS_GET_CHECKINS' })
+    wsLoadCheckins: () => dispatch({ type: 'WS_GET_CHECKINS' })
   }
 }
 

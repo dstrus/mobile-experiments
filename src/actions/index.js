@@ -2,9 +2,9 @@ import {
   SIGN_IN,
   SIGN_OUT,
   ADD_TO_QUEUE,
-  SELECT_PATRON,
+  SELECT_CHECKIN,
   RETURN_ALL_ITEMS,
-  LOAD_PATRONS,
+  LOAD_CHECKINS,
   SET_SEARCH_RESULTS,
   SET_SEARCH_TERM,
   SET_SEARCH_BY
@@ -26,31 +26,31 @@ export function signOut() {
   }
 }
 
-export function addToQueue(patron) {
+export function addToQueue(checkin) {
   return {
     type: ADD_TO_QUEUE,
-    payload: patron
+    payload: checkin
   }
 }
 
-export function selectPatron(patron) {
+export function selectCheckin(checkin) {
   return {
-    type: SELECT_PATRON,
-    payload: patron
+    type: SELECT_CHECKIN,
+    payload: checkin
   }
 }
 
-export function returnAllItems(patron) {
+export function returnAllItems(checkin) {
   return {
     type: RETURN_ALL_ITEMS,
-    payload: patron
+    payload: checkin
   }
 }
 
-export function loadPatrons(patrons) {
+export function loadCheckins(checkins) {
   return {
-    type: LOAD_PATRONS,
-    payload: patrons
+    type: LOAD_CHECKINS,
+    payload: checkins
   }
 }
 

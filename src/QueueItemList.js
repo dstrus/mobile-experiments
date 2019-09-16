@@ -3,22 +3,22 @@ import React from 'react'
 import QueueItem from './QueueItem'
 import './QueueItemList.css'
 
-function QueueItemList({ patrons, blankMessage, ...props }) {
+function QueueItemList({ checkins, blankMessage, ...props }) {
   return (
     <div className="QueueItemList">
       {
-        patrons.length > 0 && (
-          patrons.map(patron => (
+        checkins.length > 0 && (
+          checkins.map(checkin => (
             <QueueItem
-              patron={patron}
-              key={patron.id}
+              checkin={checkin}
+              key={checkin.id}
               {...props}
             />
           ))
         )
       }
       {
-        patrons.length === 0 && (
+        checkins.length === 0 && (
           <p>{blankMessage}</p>
         )
       }

@@ -22,11 +22,11 @@ function Search(props) {
 
     let results = []
     if (term.length > 0) {
-      results = props.patrons.filter(patron => {
+      results = props.checkins.filter(checkin => {
         if (by === 'phone') {
-          return patron.phone.replace(/\D/g,'').includes(term)
+          return checkin.phone.replace(/\D/g,'').includes(term)
         } else if (by === 'tag') {
-          return patron.tags.findIndex(tag => tag.number.replace(/\D/g,'').includes(term)) > -1
+          return checkin.tags.findIndex(tag => tag.number.replace(/\D/g,'').includes(term)) > -1
         } else {
           return false
         }

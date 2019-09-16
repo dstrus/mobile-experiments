@@ -5,7 +5,7 @@ import SignIn from '../SignIn'
 
 function mapDispatchToProps(dispatch) {
   return {
-    signIn: (patron) => dispatch(signIn(patron))
+    signIn: (checkin) => dispatch(signIn(checkin))
   }
 }
 

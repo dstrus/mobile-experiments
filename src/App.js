@@ -4,7 +4,7 @@ import { Route, Redirect, Switch } from 'react-router-dom'
 import Search from './containers/SearchContainer'
 import Queue from './containers/QueueContainer'
 import SignIn from './containers/SignInContainer'
-import PatronDetails from './containers/PatronDetailsContainer'
+import CheckinDetails from './containers/CheckinDetailsContainer'
 
 import './App.css'
 
@@ -24,7 +24,7 @@ class App extends Component {
     const prevStatus = prevProps.connection.state
     const status = this.props.connection.state
     if (status === 'READY' && prevStatus !== 'READY') {
-      this.props.wsLoadPatrons()
+      this.props.wsLoadCheckins()
     }
   }
 
@@ -67,11 +67,11 @@ class App extends Component {
             }
           />
           <Route
-            path="/patrons/:id"
+            path="/checkins/:id"
             render={
               () => (
                 this.signedIn()
-                  ? <PatronDetails />
+                  ? <CheckinDetails />
                   : <Redirect to="/sign-in" />
               )
             }

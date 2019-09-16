@@ -1,4 +1,4 @@
-export const patrons = [
+export const checkins = [
   {
     id: 1,
     phone: 'XXX-X12-7609',

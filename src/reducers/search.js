@@ -1,13 +1,13 @@
 import {
   ADD_TO_QUEUE,
   RETURN_ALL_ITEMS,
-  LOAD_PATRONS,
+  LOAD_CHECKINS,
   SET_SEARCH_RESULTS,
   SET_SEARCH_TERM,
   SET_SEARCH_BY
 } from '../actions/constants'
 
-export default function search(state = { patrons: [], results: [], term: '', by: 'phone' }, action) {
+export default function search(state = { checkins: [], results: [], term: '', by: 'phone' }, action) {
   let i = 0
   let results = []
   switch(action.type) {
@@ -19,9 +19,9 @@ export default function search(state = { patrons: [], results: [], term: '', by:
         return state
       }
 
-      const patron = {...results[i]}
-      patron.isQueued = true
-      results.splice(i, 1, patron)
+      const checkin = {...results[i]}
+      checkin.isQueued = true
+      results.splice(i, 1, checkin)
 
       return {
         ...state,
@@ -29,7 +29,7 @@ export default function search(state = { patrons: [], results: [], term: '', by:
       }
     case RETURN_ALL_ITEMS:
       results = [...state.results]
-      i = results.findIndex(patron => patron.id === action.payload.id)
+      i = results.findIndex(checkin => checkin.id === action.payload.id)
 
       if (i === -1) {
         return state
@@ -40,10 +40,10 @@ export default function search(state = { patrons: [], results: [], term: '', by:
         ...state,
         results
       }
-    case LOAD_PATRONS:
+    case LOAD_CHECKINS:
       return {
         ...state,
-        patrons: action.payload
+        checkins: action.payload
       }
     case SET_SEARCH_RESULTS:
       return {

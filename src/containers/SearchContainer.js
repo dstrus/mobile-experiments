@@ -7,7 +7,7 @@ function mapStateToProps(state) {
   return {
     term: state.search.term,
     searchBy: state.search.by,
-    patrons: state.search.patrons,
+    checkins: state.search.checkins,
     results: state.search.results,
   }
 }

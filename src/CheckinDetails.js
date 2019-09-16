@@ -4,11 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { withRouter } from 'react-router-dom'
 
 import Item from './Item'
-import './PatronDetails.css'
+import './CheckinDetails.css'
 
-function PatronDetails(props) {
-  const patron = props.patrons.find(patron => patron.id.toString() === props.match.params.id)
-  const patronIsInQueue = props.queue.find(queuedPatron => queuedPatron === patron)
+function CheckinDetails(props) {
+  const checkin = props.checkins.find(checkin => checkin.id.toString() === props.match.params.id)
+  const checkinIsInQueue = props.queue.find(queuedCheckin => queuedCheckin === checkin)
 
   const onError = ev => {
     const img = ev.target
@@ -21,7 +21,7 @@ function PatronDetails(props) {
   }
 
   return (
-    <div className="PatronDetails">
+    <div className="CheckinDetails">
       <div>
         <div className="detailHeader">
           <button
@@ -35,16 +35,16 @@ function PatronDetails(props) {
             <FontAwesomeIcon icon={faEllipsisH} />
           </button>
         </div>
-        <div className="patronDetailsContainer">
+        <div className="checkinDetailsContainer">
           <img
-            className="patron"
-            src={patron.avatar}
+            className="checkin"
+            src={checkin.avatar}
             alt=""
             onError={onError}
           />
           <FontAwesomeIcon icon={faUser} className="hidden" />
           <div className="details">
-            <h4>{patron.phone}</h4>
+            <h4>{checkin.phone}</h4>
             <h6>Arrival: 10/04/19 @12:30pm</h6>
             <h6>6 items</h6>
             <h5>KIOSK A</h5>
@@ -52,18 +52,18 @@ function PatronDetails(props) {
         </div>
         <div className="itemList">
           {
-            patron.tags.map(tag => (
-              <Item enqueued={patronIsInQueue} tag={tag} key={tag.id} />
+            checkin.tags.map(tag => (
+              <Item enqueued={checkinIsInQueue} tag={tag} key={tag.id} />
             ))
           }
         </div>
       </div>
       <div className="footer">
-        <button>{patronIsInQueue ? 'return all' : 'return all'}</button>
-        <button>{patronIsInQueue ? 'select all' : 'queue all'}</button>
+        <button>{checkinIsInQueue ? 'return all' : 'return all'}</button>
+        <button>{checkinIsInQueue ? 'select all' : 'queue all'}</button>
       </div>
     </div>
   )
 }
 
-export default withRouter(PatronDetails)
+export default withRouter(CheckinDetails)

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { returnAllItems, selectPatron } from '../actions'
+import { returnAllItems, selectCheckin } from '../actions'
 import Queue from '../Queue'
 
 function mapStateToProps(state) {
@@ -11,8 +11,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    returnAllItems: (patron) => dispatch(returnAllItems(patron)),
-    selectPatron: (patron) => dispatch(selectPatron(patron))
+    returnAllItems: (checkin) => dispatch(returnAllItems(checkin)),
+    selectCheckin: (checkin) => dispatch(selectCheckin(checkin))
   }
 }
 

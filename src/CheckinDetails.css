@@ -1,24 +1,24 @@
-.PatronDetails {
+.CheckinDetails {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: calc(100vh - 40px - 5rem);
 }
 
-.PatronDetails .detailHeader {
+.CheckinDetails .detailHeader {
   display: flex;
   justify-content: space-between;
   padding: 0 10px;
 }
 
-.PatronDetails .detailHeader button, .PatronDetails .detailHeader button.backArrow {
+.CheckinDetails .detailHeader button, .CheckinDetails .detailHeader button.backArrow {
   border: none;
   background: none;
   font-size: 1.5rem;
   color: #ccc;
 }
 
-.PatronDetails .patronDetailsContainer {
+.CheckinDetails .checkinDetailsContainer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,42 +26,42 @@
   padding-bottom: 1.5rem;
 }
 
-.PatronDetails h2 {
+.CheckinDetails h2 {
   color: #777c80;
   text-align: center;
 }
 
-.PatronDetails img.patron {
+.CheckinDetails img.checkin {
   width: 85px;
   height: 85px;
   object-fit: cover;
 }
 
-.PatronDetails .patronDetailsContainer svg {
+.CheckinDetails .checkinDetailsContainer svg {
   width: 85px;
   height: 50px;
 }
 
-.PatronDetails .patronDetailsContainer .details {
+.CheckinDetails .checkinDetailsContainer .details {
   display: block;
   padding: 0 10px;
 }
 
-.PatronDetails .details h4 {
+.CheckinDetails .details h4 {
   font-size: 0.9rem;
   letter-spacing: 1px;
   color: #252525;
   margin-bottom: 1px;
 }
 
-.PatronDetails .details h5 {
+.CheckinDetails .details h5 {
   font-size: 0.7rem;
   letter-spacing: 1px;
   color: #252525;
   margin-top: 8px;
 }
 
-.PatronDetails .details h6 {
+.CheckinDetails .details h6 {
   font-size: 0.7rem;
   letter-spacing: 1.5px;
   font-weight: 600;
@@ -70,11 +70,11 @@
   margin-bottom: 2px;
 }
 
-.PatronDetails h4, .PatronDetails h5, .PatronDetails h6 {
+.CheckinDetails h4, .CheckinDetails h5, .CheckinDetails h6 {
   margin: 4px;
 }
 
-.PatronDetails .itemList {
+.CheckinDetails .itemList {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -82,7 +82,7 @@
   margin: 0 auto;
 }
 
-.PatronDetails .footer button {
+.CheckinDetails .footer button {
   width: 50%;
   height: 60px;
   background-color: #ededed;

@@ -5,7 +5,7 @@ import { faCheck, faUser } from '@fortawesome/free-solid-svg-icons'
 import './QueueItem.css'
 
 function QueueItem(props) {
-  const { patron } = props
+  const { checkin } = props
 
   const onError = ev => {
     const img = ev.target
@@ -20,7 +20,7 @@ function QueueItem(props) {
   const renderReturnButton = () => {
     return (
       <div>
-        <button onClick={() => props.action(props.patron)} disabled={props.patron[props.disabledWhen]}>
+        <button onClick={() => props.action(props.checkin)} disabled={props.checkin[props.disabledWhen]}>
           {props.actionLabel}
         </button>
         <p>KIOSK A</p>
@@ -32,19 +32,19 @@ function QueueItem(props) {
     <div className="QueueItem">
       <div className="imgContainer">
         <img
-          className="patron small"
-          src={patron.avatar}
+          className="checkin small"
+          src={checkin.avatar}
           alt=""
           onError={onError}
         />
         <FontAwesomeIcon icon={faUser} className="hidden" />
-        <div className="phone">{patron.phone}</div>
+        <div className="phone">{checkin.phone}</div>
       </div>
 
       <div className="details">
         <div className="tags">
           {
-            patron.tags.map((tag, i) => {
+            checkin.tags.map((tag, i) => {
               return (
                 <div className={`tag ${tag.color}`} key={i}>
                   <img
@@ -62,7 +62,7 @@ function QueueItem(props) {
       </div>
 
       {
-        patron[props.disabledWhen]
+        checkin[props.disabledWhen]
           ? <div className="check"><FontAwesomeIcon icon={faCheck} /></div>
           : renderReturnButton()
       }

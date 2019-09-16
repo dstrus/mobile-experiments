@@ -12,7 +12,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    addToQueue: (patron) => dispatch(addToQueue(patron))
+    addToQueue: (checkin) => dispatch(addToQueue(checkin))
   }
 }
 

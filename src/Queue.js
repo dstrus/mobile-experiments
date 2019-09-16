@@ -7,7 +7,7 @@ import Header from './containers/HeaderContainer'
 import './Queue.css'
 
 function Queue(props) {
-  const myItems = props.queue.filter(patron => patron.isSelected)
+  const myItems = props.queue.filter(checkin => checkin.isSelected)
 
   return (
     <div className="Queue">
@@ -35,7 +35,7 @@ function Queue(props) {
           : <div className="listContainer">
               <h2>My Items ({myItems.length})</h2>
               <QueueItemList
-                patrons={myItems}
+                checkins={myItems}
                 disabledWhen='isReturned'
                 actionLabel='RETURN'
                 action={props.returnAllItems}
@@ -44,10 +44,10 @@ function Queue(props) {
 
               <h2>All Items ({props.queue.length})</h2>
               <QueueItemList
-                patrons={props.queue}
+                checkins={props.queue}
                 disabledWhen='isSelected'
                 actionLabel='SELECT'
-                action={props.selectPatron}
+                action={props.selectCheckin}
                 blankMessage="The queue is empty!"
               />
             </div>
