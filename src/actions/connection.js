@@ -4,7 +4,7 @@ import {
   CONNECTION_READY,
   WS_CONNECT,
   WS_SUBSCRIBE
-} from './constants';
+} from './constants'
 
 export function opening() {
   return {
