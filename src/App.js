@@ -24,7 +24,7 @@ class App extends Component {
     const prevStatus = prevProps.connection.state
     const status = this.props.connection.state
     if (status === 'READY' && prevStatus !== 'READY') {
-      this.props.wsLoadPatrons()
+      this.props.wsGetInitialData()
     }
   }
 

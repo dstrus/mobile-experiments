@@ -3,7 +3,8 @@ import {
   CONNECTION_SUBSCRIBING,
   CONNECTION_READY,
   WS_CONNECT,
-  WS_SUBSCRIBE
+  WS_SUBSCRIBE,
+  WS_GET_INITIAL_DATA,
 } from './constants';
 
 export function opening() {
@@ -34,5 +35,11 @@ export function wsConnect() {
 export function wsSubscribe() {
   return {
     type: WS_SUBSCRIBE,
+  }
+}
+
+export function wsGetInitialData() {
+  return {
+    type: WS_GET_INITIAL_DATA,
   }
 }
