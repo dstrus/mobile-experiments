@@ -9,22 +9,29 @@ import {
 
 export default function search(state = { patrons: [], results: [], term: '', by: 'phone' }, action) {
   let i = 0
+  let j = 0
   let results = []
   switch(action.type) {
     case ADD_TO_QUEUE:
       results = [...state.results]
+      const patrons = [...state.patrons]
       i = results.findIndex(searchResult => searchResult.id === action.payload.id)
-
-      if (i === -1) {
-        return state
-      }
+      j = patrons.findIndex(patron => patron.id === action.payload.id)
 
       const patron = {...action.payload}
-      results.splice(i, 1, patron)
 
+      if (i > -1) {
+        results.splice(i, 1, patron)
+      }
+
+      if (j > -1) {
+        patrons.splice(j, 1, patron)
+      }
+      
       return {
         ...state,
-        results
+        results,
+        patrons
       }
     case RETURN_ALL_ITEMS:
       results = [...state.results]
