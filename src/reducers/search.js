@@ -19,8 +19,7 @@ export default function search(state = { patrons: [], results: [], term: '', by:
         return state
       }
 
-      const patron = {...results[i]}
-      patron.isQueued = true
+      const patron = {...action.payload}
       results.splice(i, 1, patron)
 
       return {
