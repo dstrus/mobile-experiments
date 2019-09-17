@@ -34,7 +34,7 @@ function queue(state = [], action) {
         return patrons
     case LOAD_PATRONS:
       const queue = action.payload.filter(patron => {
-        return patron.tags.filter(tag => tag.queue_entry_id).length > 0
+        return patron.tags.filter(tag => tag.queueEntryId).length > 0
       })
       return [...queue]
     default:
