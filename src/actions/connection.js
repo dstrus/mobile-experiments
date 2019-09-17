@@ -45,12 +45,12 @@ export function wsGetInitialData() {
   }
 }
 
-export function wsAddToQueue(patron) {
+export function wsAddToQueue(patron, ids) {
   return {
     type: WS_ADD_TO_QUEUE,
     payload: {
       patron_id: patron.id,
-      item_ids: patron.tags.map(tag => tag.id)
+      item_ids: ids || patron.tags.map(tag => tag.id)
     }
   }
 }

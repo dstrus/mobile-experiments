@@ -3,7 +3,7 @@ import { faArrowLeft, faEllipsisH, faUser } from '@fortawesome/free-solid-svg-ic
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { withRouter } from 'react-router-dom'
 
-import Item from './Item'
+import Item from './containers/ItemContainer'
 import './PatronDetails.css'
 
 function PatronDetails(props) {
@@ -53,7 +53,7 @@ function PatronDetails(props) {
         <div className="itemList">
           {
             patron.tags.map(tag => (
-              <Item enqueued={patronIsInQueue} tag={tag} key={tag.id} />
+              <Item enqueued={patronIsInQueue} tag={tag} key={tag.id} patron={patron}/>
             ))
           }
         </div>
