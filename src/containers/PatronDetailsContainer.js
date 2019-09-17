@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 
+import { wsAddToQueue } from '../actions/connection'
 import PatronDetails from '../PatronDetails'
 
 function mapStateToProps(state) {
@@ -8,5 +9,12 @@ function mapStateToProps(state) {
     patrons: state.search.patrons,
   }
 }
-const PatronDetailsContainer = connect(mapStateToProps)(PatronDetails)
+
+function mapDispatchToProps(dispatch) {
+  return {
+    wsAddToQueue: (patron, ids) => dispatch(wsAddToQueue(patron, ids)),
+  }
+}
+
+const PatronDetailsContainer = connect(mapStateToProps, mapDispatchToProps)(PatronDetails)
 export default PatronDetailsContainer
