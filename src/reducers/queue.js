@@ -1,7 +1,8 @@
 import {
   ADD_TO_QUEUE,
   RETURN_ALL_ITEMS,
-  SELECT_PATRON
+  SELECT_PATRON,
+  LOAD_PATRONS,
 } from '../actions/constants'
 
 function queue(state = [], action) {
@@ -31,6 +32,11 @@ function queue(state = [], action) {
         patrons.splice(i, 1)
         patrons.push(patron)
         return patrons
+    case LOAD_PATRONS:
+      const queue = action.payload.filter(patron => {
+        return patron.tags.filter(tag => tag.queue_entry_id).length > 0
+      })
+      return [...queue]
     default:
       return state
   }
