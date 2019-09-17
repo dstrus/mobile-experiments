@@ -9,18 +9,31 @@ import PatronDetails from './containers/PatronDetailsContainer'
 import './App.css'
 
 class App extends Component {
+  constructor(props) {
+    super(props)
 
-  componentDidMount() {
-    if (this.props.connection.state === '') {
-      this.props.wsConnect()
+    let signedIn = false
+
+    if (props.connection.state === '') {
+      props.wsConnect()
     }
     if (window.localStorage.getItem('uid')) {
-      this.props.signIn()
+      props.signIn()
+      signedIn = true
     }
-    window.localStorage.setItem('tested', false)
+
+    this.state = {
+      signedIn
+    }
   }
 
   componentDidUpdate(prevProps, prevState) {
+    if (prevProps.uid && !this.props.uid) {
+      this.setState({ signedIn: false })
+    } else if (!prevProps.uid && this.props.uid) {
+      this.setState({ signedIn: true })
+    }
+
     const prevStatus = prevProps.connection.state
     const status = this.props.connection.state
     if (status === 'READY' && prevStatus !== 'READY') {
@@ -29,7 +42,7 @@ class App extends Component {
   }
 
   signedIn = () => {
-    return this.props.uid
+    return this.state.signedIn
   }
 
   render() {
