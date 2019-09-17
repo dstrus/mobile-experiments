@@ -6,13 +6,15 @@ import {
 
 function queue(state = [], action) {
   let patrons = []
+  let patron = {}
   let i = -1
   switch(action.type) {
     case ADD_TO_QUEUE:
       patrons = [...state]
       i = patrons.findIndex(patron => patron.id === action.payload.id)
       if (i > -1) {
-        return state
+        patrons.splice(i, 1, action.payload)
+        return patrons
       } else {
         return [...state, action.payload]
       }
@@ -24,7 +26,7 @@ function queue(state = [], action) {
     case SELECT_PATRON:
         patrons = [...state]
         i = patrons.findIndex(patron => patron.id === action.payload.id)
-        const patron = {...patrons[i]}
+        patron = {...patrons[i]}
         patron.isSelected = true
         patrons.splice(i, 1)
         patrons.push(patron)
