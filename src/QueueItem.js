@@ -44,7 +44,7 @@ function QueueItem(props) {
       <div className="details">
         <div className="tags">
           {
-            patron.tags.map((tag, i) => {
+            patron.tags.filter(tag => tag.queue_entry_id).map((tag, i) => {
               return (
                 <div className={`tag ${tag.color}`} key={i}>
                   <img
