@@ -42,6 +42,7 @@ export function wsSubscribe() {
 export function wsGetInitialData() {
   return {
     type: WS_GET_INITIAL_DATA,
+    channel: 'OperatorChannel',
   }
 }
 

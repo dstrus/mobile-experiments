@@ -24,10 +24,18 @@ const onMessage = (ws, store) => evt => {
   if (connectionState === 'OPENING') {
     if (msg.type === 'welcome') {
       store.dispatch(connectionActions.subscribing());
-      const msg = {
+      let msg = {
         command: 'subscribe',
         identifier: JSON.stringify({
           channel: 'VenueChannel',
+        }),
+      };
+      socket.send(JSON.stringify(msg));
+
+      msg = {
+        command: 'subscribe',
+        identifier: JSON.stringify({
+          channel: 'OperatorChannel',
         }),
       };
       socket.send(JSON.stringify(msg));
@@ -55,6 +63,9 @@ const onMessage = (ws, store) => evt => {
 }
 
 export default store => next => action => {
+  if (!action) {
+    return undefined
+  }
   const match = /^WS_(.+)$/.exec(action.type);
   if (!match) {
     return next(action);
@@ -92,7 +103,7 @@ export default store => next => action => {
     const msg = {
       command: 'message',
       identifier: JSON.stringify({
-        channel: 'VenueChannel',
+        channel: wsAction.channel || 'VenueChannel',
       }),
       data: JSON.stringify({
         ...action,
