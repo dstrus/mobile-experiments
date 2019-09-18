@@ -39,14 +39,14 @@ function Queue(props) {
                 disabledWhen='isReturned'
                 actionLabel='RETURN'
                 action={props.returnAllItems}
-                blankMessage="Select items from below to add to My Items."
+                blankMessage="Assign items from below to add to My Items."
               />
 
               <h2>All Items ({props.queue.length})</h2>
               <QueueItemList
                 patrons={props.queue}
                 disabledWhen='isSelected'
-                actionLabel='SELECT'
+                actionLabel='ASSIGN'
                 action={props.selectPatron}
                 blankMessage="The queue is empty!"
               />
